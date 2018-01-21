@@ -198,7 +198,7 @@
 
 	// Determine base URL, settings
 		x = jQuery('script').filter(function() { return this.src.match(/5grid\/init\.js/); }).first();
-		y = x.attr('src').split('?');
+		//y = x.attr('src').split('?');
 		baseURL = y[0].replace(/5grid\/init\.js/, '');
 
 		// Override settings
