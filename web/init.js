@@ -336,7 +336,7 @@
 				{
 					_5grid.is1200px = true;
 					_head.prepend('<meta name="viewport" content="width=' + _settings.viewport_is1200px + '" />');
-					headQueue.pushE_5grid(baseURL + '5grid/core-1200px.css');
+					headQueue.pushE_5grid(baseURL + 'core-1200px.css');
 					
 					// Load 1200px stylesheet if 1200px was explicitly enabled
 					if (do1200px)
@@ -347,7 +347,7 @@
 				{
 					_5grid.is1000px = true;
 					_head.prepend('<meta name="viewport" content="width=' + _settings.viewport_is1000px + '" />');
-					headQueue.pushE_5grid(baseURL + '5grid/core-1000px.css');
+					headQueue.pushE_5grid(baseURL + 'core-1000px.css');
 
 					// Load 1000px stylesheet if 1000px was explicitly enabled
 					if (do1000px)
@@ -362,8 +362,8 @@
 					_5grid.isDesktop = true;
 					_5grid.is1000px = true;
 					_head.prepend('<meta name="viewport" content="width=' + _settings.viewport_is1000px + '" />');
-					headQueue.pushE_5grid(baseURL + '5grid/core-desktop.css');
-					headQueue.pushE_5grid(baseURL + '5grid/core-1000px.css');
+					headQueue.pushE_5grid(baseURL + 'core-desktop.css');
+					headQueue.pushE_5grid(baseURL + 'core-1000px.css');
 					headQueue.pushE_5grid(baseURL + _settings.prefix + '-1000px.css');
 				}
 				// 1200px (exclusive)
@@ -372,8 +372,8 @@
 					_5grid.isDesktop = true;
 					_5grid.is1200px = true;
 					_head.prepend('<meta name="viewport" content="width=' + _settings.viewport_is1200px + '" />');
-					headQueue.pushE_5grid(baseURL + '5grid/core-desktop.css');
-					headQueue.pushE_5grid(baseURL + '5grid/core-1200px.css');
+					headQueue.pushE_5grid(baseURL + 'core-desktop.css');
+					headQueue.pushE_5grid(baseURL + 'core-1200px.css');
 					headQueue.pushE_5grid(baseURL + _settings.prefix + '-1200px.css');
 				}
 			}
