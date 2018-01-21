@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang = en>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+	 <link rel="stylesheet" href="homeStyle.css">
+ <style>
+    body {
+	background-color: #666666;
+	}
+	
+	.button {
+	border-radius: 5px;
+    background-color: #666666 ;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+	text-align: center;
+	border: 2px solid #008CBA}
+	
+	.button:hover{
+	background-color: #008CBA;
+	color: white;}
+	
+	a{ 
+	color: #008CBA}
+	
+	<!--mark {
+    background-color: #ADADAD;
+	color: ;}-->
+	
+	h1{
+	font-size: 50pt;
+	color: #008CBA;
+	border-style: solid;
+	size: 50px;
+	border-color: #ADADAD;
+	text-align: center;
+	font-family: "Arial Black", Gadget, sans-serif}
+	
+	h2{
+	text-align:center;
+	font-size: 26pt;
+	color: White;
+	font-family:"Segoe UI"}
+	
+	}
+	
+    p{
+    color: white;
+    font-family: Georgia, serif;}
+	
+	#p1{
+	  color: white;
+	  text-align: center;
+    font-family: Georgia, serif;
+	}
+	#a1{
+	text-align: center;
+	color: azure;
+	font-family: Georgia, serif;}
+	
+	#img2 {
+    display: block;
+    margin: auto;
+    width: auto;}
+
+	tr  {
+    color: white;
+    font-family: verdana;}
+	
+	input[type=submit]:hover {
+    background-color: #008CBA;}
+	
+input[type=text] {
+    background-color: #008CBA;
+    color: black;}
+	
+	table, td, th { border: 2px solid black }
+    </style>
+    <title>Home Page</title>
+  </head>
+  
+  <body>
+<header>
+<h1 id="here">Adam Gehring's Homepage</h1>
+</header>
+
+  <!-- Navbar -->
+  <ul id="nav">
+  <li><a href="http://157.201.194.254/~agehring/index.html">
+  <img alt="Return To Index" src="home-icon-hi.png" height="50" width="50">
+	HOME
+	</a></li>             
+  </ul>
+
+    <hr/> <br/>
+<main class="center">
+	  <img id="img2" src="me.jpg" alt="Adam's Picture" >
+	  <blockquote>
+      <h4> “A pessimist sees the difficulty in every opportunity; an optimist
+        sees the opportunity in every difficulty.” - Winston Churchill
+    </h4>
+	</blockquote>
+	
+<h2>About Me</h2>	  
+	  <p id="p1">My name is Adam Gehring. I'm a Computer Science major. <br/>
+	  I was born in Washington and my family now lives in Utah. <br/>
+	  Now so here below we can see my class schedule. <br/> So if you really wanted to stalk me now you <b>can</b>!
+	  <br/> I'm really liking the class, <i>but</i> I feel like there is so much to learn still. <br/>
+	  Sometimes I feel like I can't make good websites but then I remember my <a href="#in">inspirations.</a><br/>
+	  That way I wouldn't feel so left behind. <br/>
+If I keep practicing then I’m sure I’ll do fine.<br/> <b>And so will you!</b> <br/> <i>If you want to be 
+more proficient at HTML visit W3 Schools!</i></p>
+<a class="button" href="http://www.w3schools.com/default.asp" >Visit W3 Schools<a/>
+	
+	  <br/>
+	  <br/>
+	  <h2>My Schedule</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td>Monday</td>
+            <td>Tuesday</td>
+            <td>Wednesday</td>
+            <td>Thursday</td>
+            <td>Friday</td>
+          </tr>
+          <tr>
+            <td>CS 246 Software Development<br/>
+              Time: 9-10h <br/>
+              Room 385 STC</td>
+            <td>CS 213 Web Engineering<br/>
+              Time: </td>
+            <td>CS 246 Software Development<br/>
+              Time: 9-10h <br/>
+              Room 385 STC</td>
+            <td>CS 213 Web Engineering<br/>
+              Time: 11h30-13h<br/>
+              Room 375 STC</td>
+            <td>CS 246 Software Development<br/>
+              Time: 9-10h <br/>
+              Room 385 STC</td>
+          </tr>
+          <tr>
+            <td>MATH 330 Engineering Statistics<br/>
+              Time: 10h15-11h15<br/>
+              Room 229 RKC</td>
+            <td>ECEN 260 Microproc Based-System Design<br/>
+              Time: 15h15-17h<br/>
+              Room 215 STC<br/>
+            </td>
+            <td>MATH 330 Engineering Statistics<br/>
+              Time: 10h15-11h15<br/>
+              Room 229 RKC </td>
+            <td>ECEN 260 Microproc Based-System Design<br/>
+              Time: 15h15-17h<br/>
+              Room 215 STC </td>
+            <td>MATH 330 Engineering Statistics<br/>
+              Time: 10h15-11h15<br/>
+              Room 229 RKC </td>
+          </tr>
+        </tbody>
+      </table>
+	  <hr/>
+
+	<h2 id="in">My Inspirations</h2>
+	<p id ="p1">Here are some of the sites that I admire and sites that inspire me to work on web pages.<br/>
+	<a href="http://www.zombo.com/">Zombo.com</a>: This is one of my favorite sites because when It first came out it was a parody of flash loading pages.<br/>
+	<a href ="http://d8dt.com/">D8dt.com</a> : this site was made by my roommate Camden for one of his classes but he liked it so much that he<br/> 
+	kept the site online.</p>
+	  
+	<hr/>
+
+	<h2>Contact Me</h2>
+ </main>
+        <form>
+		
+            <fieldset>
+                <legend>Survey</legend>
+                <ul>
+                    <li><label for="txtfName">First Name</label>
+                        <input type="text" name="txtfName" id="txtfName" size="20" />
+                    </li>
+                    <li><label for="txtlName">Last Name:</label> 
+                        <input type="text" name="txtlName" id="txtlName" size="21" /></li>
+                    <li><label for="txtEmail">Email: </label>
+                        <input type="text" name="txtEmail" id="txtEmail" size="40" /></li>
+                   
+                    <li>How did you hear about the site?
+                        <br>
+                        <input type="radio" name="site" id="friend" value="Friend" checked="checked"/>
+                        <label for="Friend">A friend told me about it.</label>
+                        <br/>
+                        <input type="radio" name="site" id="family" value="family" />
+                        <label for="family">A family member refered me.</label>
+                       	<br/>
+                        <input type="radio" name="site" id="youtube" value="ads" />
+                        <label for="youtube">I saw a video ad on Youtube.</label>
+                        <br/>
+                        <input type="radio" name="site" id="bilboard" value="ads" />
+                        <label for="bilboard">I saw an ad on a sign.</label>
+                        <br/>
+                        <input type="radio" name="site" id="socialmedia" value="ads" />
+                        <label for="socialmedia">I saw a post on Facebook, Tweet on twitter, etc.</label>
+                    </li>
+                    <li>Did you find what you were looking for?
+                        <br/>
+                        <input type="radio" name="likeit" id="meh" value="Not Sure" checked="checked"/>
+                        <label for="meh">I wish this site had more entertaining content.</label>
+                        <br/>
+                        <input type="radio" name="likeit" id="no" value="No" />
+                        <label for="no">No I didn't like your site.</label>
+                       	<br/>
+                        <input type="radio" name="likeit" id="cr" value="Yep" />
+                        <label for="cr">Yes, thanks.</label>
+                    </li>
+                    <li>Which electronic devices do you own?<br/>
+                        			
+                               
+                        <input type="checkbox" name="console" id="ps" value="Play Station" />
+                        <label for="ps">Play Station(1-4)</label>
+                                                                                          
+                        <input type="checkbox" name="console" id="mario" value="Nintendo" />
+                        <label for="mario">Nintendo (any system)</label>
+                                                                     
+                        <input type="checkbox" name="console" id="xb" value="Xbox" />
+                        <label for="xb">Xbox</label>
+						
+						<input type="checkbox" name="console" id="psp" value="portable" />
+                        <label for="portable">Hand Held Device(PSP, Nintendo DS etc.)</label>
+						<br/>
+						
+						   <input type="checkbox" name="laptop" id="pc" value="Laptop" />
+                        <label for="">Laptop (HP, Dell, Toshiba, etc)</label>
+						
+						   <input type="checkbox" name="book" id="mac" value="apple" />
+                        <label for="apple">Macbook</label>
+						<br/>
+						   <input type="checkbox" name="tablet" id="tablet" value="tablet" />
+                        <label for="tablet">Tablet (I-pad, Surface, etc)</label>
+						
+						<input type="checkbox" name="smartPhone" id="phone" value="phone" />
+                        <label for="phone">Smart Phone</label>
+						
+						<input type="checkbox" name="other" id="other" value="other" />
+                        <label for="other">Other</label>
+						<br/>
+           
+                    </li>
+                    
+                    <li><label for="how">How often do you exercise</label>
+                        <select name="time" id="how">
+                    <option value="">--Please Select--</option>
+                    <option>none</option>
+                    <option>I cant't remember the last time...</option>
+		            <option>once every three months</option>
+                    <option>once or Twice a month</option>
+                    <option>once a week</option>
+                    <option>twice a week</option>
+                    <option>three times a week</option>
+                    <option>4 times a week</option>
+                    <option>5 times a week</option>
+                    <option>6 times a week</option>
+                    <option>Everyday, sometimes twice a day</option>
+                    <option>"I want to be the Best Body Builder of all Times"</option>
+                    </select>
+                    </li>
+                    <li><label for="taMessage">Questions or Comments?</label></li>
+                    <li><textarea name="taMessage" id="taMessage" cols="40" rows="10" onfocus="this.value='';this.onfocus=null">Type your question or comment here</textarea></li>
+                    <li><label for="submit">&nbsp;</label><input type="submit" name="submit" id="submit" value="Send"></li>
+                </ul>
+            </fieldset>
+        </form>
+
+    
+ 
+  <br>
+  <br>
+  <footer>
+  <p><a href="#here"> Back to Top</a><br>
+  <small>Page by: Adam Gehring</p>
+  <p><i>Contact information: <a href="mailto:geh12001@byui.edu">gehringadam@byui.edu</a></i></small></p>
+</footer>
+</body>
+</html>
