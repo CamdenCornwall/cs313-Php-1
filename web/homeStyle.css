@@ -193,5 +193,82 @@ a {
 #nav li a:hover {
 	color: #c00;
 	background-color: #fff; }
- 
+
+
+	body {
+	background-color: #666666;
+	}
+	
+	.button {
+	border-radius: 5px;
+    background-color: #666666 ;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+	text-align: center;
+	border: 2px solid #008CBA}
+	
+	.button:hover{
+	background-color: #008CBA;
+	color: white;}
+	
+	a{ 
+	color: #008CBA}
+	
+	<!--mark {
+    background-color: #ADADAD;
+	color: ;}-->
+	
+	h1{
+	font-size: 50pt;
+	color: #008CBA;
+	border-style: solid;
+	size: 50px;
+	border-color: #ADADAD;
+	text-align: center;
+	font-family: "Arial Black", Gadget, sans-serif}
+	
+	h2{
+	text-align:center;
+	font-size: 26pt;
+	color: White;
+	font-family:"Segoe UI"}
+	
+	}
+	
+    p{
+    color: white;
+    font-family: Georgia, serif;}
+	
+	#p1{
+	  color: white;
+	  text-align: center;
+    font-family: Georgia, serif;
+	}
+	#a1{
+	text-align: center;
+	color: azure;
+	font-family: Georgia, serif;}
+	
+	#img2 {
+    display: block;
+    margin: auto;
+    width: auto;}
+
+	tr  {
+    color: white;
+    font-family: verdana;}
+	
+	input[type=submit]:hover {
+    background-color: #008CBA;}
+	
+input[type=text] {
+    background-color: #008CBA;
+    color: black;}
+	
+	table, td, th { border: 2px solid black }
+
  
