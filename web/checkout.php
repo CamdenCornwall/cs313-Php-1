@@ -18,7 +18,7 @@
 
     <main role="main" class="container">
 
-        <div class="starter-template">
+        <div>
             <h1>Checkout</h1>
         </div>
         <div>
@@ -39,11 +39,11 @@
                 Zip Code:<br>
                 <input type="text" name="zip"/><br>
                 <button type="submit" class="btn btn-success" onclick="location.href='confirm.php'">Ok</button>
+                <br>
+                <button type="reset" class="btn btn-danger" onclick="location.href='viewCart.php'">Cancel</button>
             </form>
         </div>
-        <div class="center">
-            <button type="button" class="btn btn-danger">Back to Cart</button>
-        </div>
+        
     </main>
  
     <!-- Bootstrap core JavaScript

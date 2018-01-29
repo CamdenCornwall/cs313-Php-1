@@ -68,7 +68,7 @@
     background-color: #008CBA;}
 	
 input[type=text] {
-    background-color: #008CBA;
+    background-color: rgb(206, 206, 206);
     color: black;}
 	
 	table, td, th { border: 2px solid black }
@@ -270,7 +270,7 @@ a {
     background-color: #008CBA;}
 	
 input[type=text] {
-    background-color: rgb(161, 174, 179);
+    background-color: rgb(197, 197, 197);
     color: black;}
 	
 	table, td, th { border: 3px solid black }
