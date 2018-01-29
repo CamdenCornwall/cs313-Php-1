@@ -1,5 +1,5 @@
 function goConfirm() {
-    window.location.assign("confirm.php")
+    window.location.assign("https://morning-lowlands-87889.herokuapp.com/confirm.php");
 }
 
 function addToCart(sku, quantity) {
