@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>View Cart</title>
+    <title>Your Cart</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -27,13 +27,14 @@
             <table class="table">
                 <?php
                     $rows = sizeof($_SESSION["cart"]);
-                    $itemTypes = array( 1 => "Red Paint", 2 => "Blue Paint", 3 => "Yellow Paint", 4 => "White Paint",
-                                         5 => "Grey Paint", 6 => "Black Paint");
-                    for ($i = 0; $i <= 7; $i++) {
+                    $itemTypes = array( 1 => "Red Paint", 2 => "Blue Paint", 3 => "Yellow Paint",
+                                         4 => "White Paint", 5 => "Grey Paint", 6 => "Black Paint");
+                    for ($i = 0; $i <= 6; $i++) {
                         if(isset($_SESSION["cart"][$i]) && $_SESSION["cart"][$i]["quantity"] > 0) {
-                            echo "<tr class=\"".($i + 1)."\"><td><img class=\"smItemImage\" src=\"img/paint".($i + 1).".png\" alt=\"item number".($i + 1)."\"></td>";
+                            echo "<tr class=\"".($i + 1)."\"><td><img class=\"img\" src=\"img/paint".($i + 1).".png\" alt=\"item number".($i + 1)."\"></td>";
                             echo "<td>".$itemTypes[$i + 1]."</td><td>Quantity: <input type=\"number\" name=\"item".($i + 1)."\" value=\"".$_SESSION["cart"][$i]["quantity"]."\" id=\"item".($i + 1)."\"></td>";
-                            echo "<td><button type=\"button\" class=\"btn btn-sucess\" onclick=\"updateCart(".($i + 1).", document.getElementById('item".($i + 1)."').value";
+                            echo "<td><button type=\"button\" class=\"btn btn-success\"";
+                            echo  "onclick=\"updateCart(".($i + 1).", document.getElementById('item".($i + 1)."').value";
                             echo ")\">Update</button></td>";
                             echo "<td><button type=\"button\" class=\"btn btn-danger\" onclick=\"removeItem(".($i + 1);
                             echo ")\">Remove</button></td></tr>";
@@ -60,9 +61,6 @@
     </nav>
 
     </main>
-    <!-- /.container -->
-
-
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
