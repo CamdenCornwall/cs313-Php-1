@@ -35,7 +35,7 @@
                 <br>
                 Zip Code:<br>
                 <input type="text" name="zip" required><br>
-                <button type="submit" class="btn btn-success">Ok</button>
+                <button type="submit" class="btn btn-success" onsubmit="location.href='confirm.php'">Ok</button>
                 <br><br><hr>
                 <button type="reset" class="btn btn-danger" onclick="location.href='shoppingCart.php'">Cancel</button>
             </form>
