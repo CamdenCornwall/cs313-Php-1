@@ -32,32 +32,27 @@
             <table class="table">
                 <?php
                     $rows = 2;
-                    $columns = 4;
+                    $columns = 3;
                     $itemNumber = 1;
-                    $itemTypes = array( 1 => "Red Paint", 2 => "Blue Paint", 3 => "Yellow Paint", 4 => "Green Paint",
-                                        5 => "Orange Paint", 6 => "Indigo Paint", 7 => "Grey Paint", 8 => "Black Paint");
+                    $itemTypes = array( 1 => "Red Paint", 2 => "Blue Paint", 3 => "Yellow Paint", 
+                                        4 => "White Paint", 5 => "Grey Paint", 6 => "Black Paint");
                     for ($i = 0; $i < $rows; $i++) {
                         echo "<tr>";
                         for ($j = 0; $j < $columns; $j++) {
                             echo "<td><img class=\"itemImage\" src=\"images/wid".$itemNumber.".png\" alt=\"item number".$itemNumber."\"><br/>";
                             echo "<p>".$itemTypes[$itemNumber]."</p>";
                             echo "<input type=\"number\" name=\"item".$itemNumber."\" value=\"0\" id=\"item".$itemNumber."\"><button onclick=\"addToCart(".$itemNumber.", document.getElementById('item".$itemNumber."').value";
-                            echo ")\" class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\"><span>Add to Cart</span></button>";
+                            echo ")\" class=\"button\" type=\"submit\"><span>Add to Cart</span></button>";
                             $itemNumber++;
                             echo "</td>";
                         }
                         echo "</tr>";
                     }
                 ?>
+
             </table>
-            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <!-- <a class="nav-link" href="./viewCart.php">Shopping Cart</a> -->
-                </li>
-            </ul>
-               <button class="btn btn-outline-success my-2 my-sm-0" id="cartButton" type="button" onclick="location.href='viewCart.php'"><span>View Cart</span><div id="cartNum">0</div></button>
-        </div>
+                           <button class="btn btn-outline-success my-2 my-sm-0" id="cartButton" type="button" onclick="location.href='viewCart.php'"><span>View Cart</span><div id="cartNum">0</div></button>
+
         </div>
         <nav class="navbar navbar-expand-md navbar-light navColor fixed-bottom">
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
