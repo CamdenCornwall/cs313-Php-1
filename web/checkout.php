@@ -20,7 +20,7 @@
         
         <div class="center">
         <h3><strong>Enter your Address</strong></h3><br>
-            <form onsubmit="confirm.php" method="POST" target="_blank">
+            <form onsubmit="goConfirm()" method="POST" target="_blank">
                 Full Name:<br>  
                 <input type="text" name="name" required>
                 <br>
@@ -35,7 +35,7 @@
                 <br>
                 Zip Code:<br>
                 <input type="text" name="zip" required><br>
-                <a href="confirm.php"<button type="submit" class="btn btn-success">Ok</button></a>
+                <button type="submit" class="btn btn-success">Ok</button>
                 <br><br><hr>
                 <button type="reset" class="btn btn-danger" onclick="location.href='shoppingCart.php'">Cancel</button>
             </form>

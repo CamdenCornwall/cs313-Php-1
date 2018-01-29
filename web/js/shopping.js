@@ -1,3 +1,7 @@
+function goConfirm() {
+    window.location.assign("confirm.php")
+}
+
 function addToCart(sku, quantity) {
     jQuery.ajax({
        url: "cartFunctions.php",
