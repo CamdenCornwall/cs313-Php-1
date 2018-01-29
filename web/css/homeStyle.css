@@ -61,7 +61,7 @@
     width: auto;}
 
 	tr  {
-    color: white;
+    color: rgb(0, 0, 0);
     font-family: verdana;}
 	
 	input[type=submit]:hover {
@@ -274,5 +274,9 @@ input[type=text] {
     color: black;}
 	
 	table, td, th { border: 3px solid black }
+
+	form{
+		border: #666666;
+	}
 
  

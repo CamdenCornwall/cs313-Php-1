@@ -21,7 +21,7 @@
         <div>
             <h1>Checkout</h1>
         </div>
-        <div>
+        <div class="center">
         <h2>Address</h2><br>
             <form action="confirm.php" method="post" target="_blank">
                 Full Name:<br>  
