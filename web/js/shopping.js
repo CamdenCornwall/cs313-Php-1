@@ -1,6 +1,6 @@
 function addToCart(itemNum, quantity) {
     jQuery.ajax({
-       url: "./cartLogic.php",
+       url: "./cartFunctions.php",
        type: 'POST',
        data: {
            item: itemNum,

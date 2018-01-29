@@ -10,19 +10,16 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-
     <title>Super Mart</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
 
     <!-- Custom styles for this template -->
-    <link rel="stylesheet" type="text/css" href="homepageStyle.css">
+    <link rel="stylesheet" type="text/css" href="/css/homepageStyle.css">
 </head>
 
-    
 <body>
 
     <nav>
@@ -32,8 +29,8 @@
     <main role="main" class="container">
 
         <div class="starter-template">
-            <h1>Pick A Widget!</h1>
-            <p>There are many like them but this one could be yours!<br></p>
+            <h1>The Super Store.com</h1>
+            </br></hr>
         </div>
         <div class="table-responsive">
             <table class="table">
@@ -67,16 +64,10 @@
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="../index.html">Home<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Shopping</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./viewCart.php">Shopping Cart</a>
+                    <a class="nav-link" href="viewCart.php">Shopping Cart</a>
                 </li>
             </ul>
-               <button class="btn btn-outline-success my-2 my-sm-0" id="cartButton" type="button" onclick="location.href='./viewCart.php'"><img src="images/box.svg" alt="Shopping Cart"><div id="cartNum">0</div></button>
+               <button class="btn btn-outline-success my-2 my-sm-0" id="cartButton" type="button" onclick="location.href='viewCart.php'"><img src="images/box.svg" alt="Shopping Cart"><div id="cartNum">0</div></button>
         </div>
     </nav>
     </main>
