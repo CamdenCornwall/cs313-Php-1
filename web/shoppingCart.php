@@ -1,5 +1,5 @@
 <?php
-    include_once('cartLogic.php');
+    include_once('cartFunctions.php');
     session_start();
     if(!isset($_SESSION['cart'])) {
         $_SESSION['cart'] = array();
@@ -11,14 +11,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
+    
 
-    <title>Shopping Page</title>
+    <title>Super Mart</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
 
     <!-- Custom styles for this template -->
     <link rel="stylesheet" type="text/css" href="homepageStyle.css">
@@ -27,27 +25,12 @@
     
 <body>
 
-    <nav class="navbar navbar-expand-md navbar-light navColor fixed-top">
-        <a class="navbar-brand" href="../index.html"><img class="logo" src="../ocean.png" alt="Ocean Picture"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
+    
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="../index.html">Home<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Shopping</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./viewCart.php">Shopping Cart</a>
-                </li>
-            </ul>
+            
                <button class="btn btn-outline-success my-2 my-sm-0" id="cartButton" type="button" onclick="location.href='./viewCart.php'"><img src="images/box.svg" alt="Shopping Cart"><div id="cartNum">0</div></button>
         </div>
-    </nav>
+    
 
     <main role="main" class="container">
 
