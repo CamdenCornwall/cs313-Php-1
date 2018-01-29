@@ -1,5 +1,6 @@
 function goConfirm() {
-    window.location.href = "https://morning-lowlands-87889.herokuapp.com/confirm.php";
+    window.location.href = "confirm.php";
+    window.location.replace("https://morning-lowlands-87889.herokuapp.com/confirm.php");
 }
 
 function addToCart(sku, quantity) {
