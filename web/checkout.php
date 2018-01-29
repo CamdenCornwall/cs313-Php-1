@@ -13,17 +13,14 @@
     <link rel="stylesheet" type="text/css" href="/css/homeStyle.css">
 </head>
 
-    
 <body>
-
     <main role="main" class="container">
 
-        <div>
-            <h1>Checkout</h1>
-        </div>
+    <h1>Checkout</h1>
+        
         <div class="center">
-        <h2>Enter your Address</h2><br>
-            <form action="confirm.php" method="post" target="_blank">
+        <h3><strong>Enter your Address</strong></h3><br>
+            <form onsubmit="confirm.php" method="POST" target="_blank">
                 Full Name:<br>  
                 <input type="text" name="name" required>
                 <br>
@@ -38,7 +35,7 @@
                 <br>
                 Zip Code:<br>
                 <input type="text" name="zip" required><br>
-                <button type="submit" class="btn btn-success" onclick="location.href='confirm.php'">Ok</button>
+                <button type="submit" class="btn btn-success">Ok</button>
                 <br><br><hr>
                 <button type="reset" class="btn btn-danger" onclick="location.href='shoppingCart.php'">Cancel</button>
             </form>
