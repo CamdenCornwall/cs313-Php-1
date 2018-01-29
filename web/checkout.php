@@ -40,7 +40,7 @@
                 <input type="text" name="zip"/><br>
                 <button type="submit" class="btn btn-success" onclick="location.href='confirm.php'">Ok</button>
                 <br>
-                <button type="reset" class="btn btn-danger" onclick="location.href='viewCart.php'">Cancel</button>
+                <button type="reset" class="btn btn-danger" onclick="location.href='shoppingCart.php'">Cancel</button>
             </form>
         </div>
         
