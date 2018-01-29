@@ -33,17 +33,17 @@
                 <?php
                     $rows = 2;
                     $columns = 3;
-                    $itemNumber = 1;
+                    $sku = 1;
                     $itemTypes = array( 1 => "Red Paint", 2 => "Blue Paint", 3 => "Yellow Paint", 
                                         4 => "White Paint", 5 => "Grey Paint", 6 => "Black Paint");
                     for ($i = 0; $i < $rows; $i++) {
                         echo "<tr>";
                         for ($j = 0; $j < $columns; $j++) {
-                            echo "<td><img class=\"itemImage\" src=\"img/paint".$itemNumber.".png\" alt=\"item number".$itemNumber."\"><br>";
-                            echo "<p>".$itemTypes[$itemNumber]."</p>";
-                            echo "<input type=\"number\" name=\"item".$itemNumber."\" value=\"0\" id=\"item".$itemNumber."\"><button onclick=\"addToCart(".$itemNumber.", document.getElementById('item".$itemNumber."').value";
+                            echo "<td><img class=\"itemImage\" src=\"img/paint".$sku.".png\" alt=\"item number".$sku."\"><br>";
+                            echo "<p>".$itemTypes[$sku]."</p>";
+                            echo "<input type=\"number\" name=\"item".$sku."\" value=\"0\" id=\"item".$sku."\"><button onclick=\"addToCart(".$sku.", document.getElementById('item".$sku."').value";
                             echo ")\" class=\"button\" type=\"submit\"><span>Add to Cart</span></button>";
-                            $itemNumber++;
+                            $sku++;
                             echo "</td>";
                         }
                         echo "</tr>";
@@ -51,7 +51,8 @@
                 ?>
 
             </table>
-                           <button class="btn btn-outline-success my-2 my-sm-0" id="cartButton" type="button" onclick="location.href='viewCart.php'"><span>View Cart</span><div id="cartNum">0</div></button>
+            <button class="btn btn-outline-success" id="cartButton" type="button" onclick="location.href='viewCart.php'">
+            <span>View Cart</span><div id="cartNum">0</div></button>
 
         </div>
        

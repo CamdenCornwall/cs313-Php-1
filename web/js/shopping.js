@@ -1,50 +1,50 @@
-function addToCart(itemNum, quantity) {
+function addToCart(sku, quantity) {
     jQuery.ajax({
-       url: "./cartFunctions.php",
+       url: "cartFunctions.php",
        type: 'POST',
        data: {
-           item: itemNum,
+           item: sku,
            quantity: quantity
        },
        success: function(){
-           console.log("item successfully added item:" + itemNum + " #" + quantity);
-           //this should probably get the num of items from the session var
-           document.getElementById("cartNum").innerHTML = Number(document.getElementById("cartNum").innerHTML) + Number(quantity);
+            document.getElementById("cartNum").innerHTML = Number(document.getElementById("cartNum").innerHTML) + Number(quantity);
+            console.log("added item:" + sku + " #" + quantity);
        }
     });
 }
 
-function updateCart(itemNum, quantity) {
+function removeItem(sku) {
     jQuery.ajax({
-       url: "./js/addItem.php",
+       url: "removeItem.php",
        type: 'POST',
        data: {
-           item: itemNum,
-           quantity: quantity
+           item: sku
        },
        success: function(){
-           console.log("item successfully updated item:" + itemNum + " #" + quantity);
+           console.log("removed item:" + sku);
+           $("tr").remove("." + sku)
        }
     });
 }
 
-function removeItem(itemNum) {
+function updateCart(sku, quantity) {
     jQuery.ajax({
-       url: "./removeItem.php",
+       url: "/js/addItem.php",
        type: 'POST',
        data: {
-           item: itemNum
+           item: sku,
+           quantity: quantity
        },
        success: function(){
-           console.log("item successfully removed item:" + itemNum);
-           $("tr").remove("." + itemNum)
+           console.log("updated item:" + sku + " #" + quantity);
        }
     });
 }
+
 
 function checkout(buttonId) {
     document.getElementById(buttonId).onclick = function () {
-        console.log("hit");
-        location.href = "./viewCart.php";
+        console.log("checkout");
+        location.href = "viewCart.php";
     }
 }
