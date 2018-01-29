@@ -26,10 +26,7 @@
 <body>
 
     <nav>
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            
-               <button class="btn btn-outline-success my-2 my-sm-0" id="cartButton" type="button" onclick="location.href='./viewCart.php'"><img src="images/box.svg" alt="Shopping Cart"><div id="cartNum">0</div></button>
-        </div>
+       
     </nav>
 
     <main role="main" class="container">
@@ -61,7 +58,10 @@
                 ?>
             </table>
         </div>
-
+        <div>
+            
+            <button class="btn btn-outline-success my-2 my-sm-0" id="cartButton" type="button" onclick="location.href='viewCart.php'"><img src="images/box.svg" alt="Shopping Cart"><div id="cartNum">0</div></button>
+     </div>
     </main>
     <!-- /.container -->
 
