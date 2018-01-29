@@ -21,7 +21,7 @@
     <main role="main" class="container">
 
         <div class="starter-template">
-            <h1>Shopping Cart</h1>
+            <h1>Hope you're ready to paint!</h1>
         </div>
         <div class="table-responsive">
             <table class="table">
@@ -46,19 +46,11 @@
                 ?>
             </table>
             <div class="center">
-                <button type="button" class="button" onclick="location.href='./checkout.php'">Check Out</button>
+                <button type="button" class="button" onclick="location.href='checkout.php'">Check Out</button>
             </div>
+            <button type="button">
         </div>
-        <nav class="navbar fixed-bottom">
         
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav mr-auto">
-                
-            </ul>
-               <button class="button" id="cartButton" type="button" onclick="location.href='viewCart.php'">
-               <span>View Cart</span><div id="cartNum">0</div></button>
-        </div>
-    </nav>
 
     </main>
     <!-- Bootstrap core JavaScript
