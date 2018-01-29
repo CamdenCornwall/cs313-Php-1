@@ -114,6 +114,13 @@ p{
 
 img {
 	padding: 20px 25px 0 70px;
+	position: relative;
+    
+    width:  100px;
+    height: 100px;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
 		
 }
 
@@ -153,7 +160,7 @@ a {
 }
 
 .button span:after {
-  content: '»';
+  content: '+';
   position: absolute;
   opacity: 0;
   top: 0;
