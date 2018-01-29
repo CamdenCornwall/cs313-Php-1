@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
 
     <!-- Custom styles for this template -->
-    <link rel="stylesheet" type="text/css" href="/css/homeStlye.css">
+    <link rel="stylesheet" type="text/css" href="/css/goodStyle.css">
 </head>
 
 <body>
