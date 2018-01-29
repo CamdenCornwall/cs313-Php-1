@@ -32,7 +32,7 @@
                     for ($i = 0; $i <= 6; $i++) {
                         if(isset($_SESSION["cart"][$i]) && $_SESSION["cart"][$i]["quantity"] > 0) {
                             echo "<tr class=\"".($i + 1)."\"><td><img class=\"img\" src=\"img/paint".($i + 1).".png\" alt=\"item number".($i + 1)."\"></td>";
-                            echo "<td>".$itemTypes[$i + 1]."</td><td>Quantity: <input type=\"number\" name=\"item".($i + 1)."\" value=\"".$_SESSION["cart"][$i]["quantity"]."\" id=\"item".($i + 1)."\"></td>";
+                            echo "<td>".$itemTypes[$i + 1]."</td><td>Quantity: <input type=\"number\" min=\"0\" name=\"item".($i + 1)."\" value=\"".$_SESSION["cart"][$i]["quantity"]."\" id=\"item".($i + 1)."\"></td>";
                             echo "<td><button type=\"button\" class=\"btn btn-success\"";
                             echo  "onclick=\"updateCart(".($i + 1).", document.getElementById('item".($i + 1)."').value";
                             echo ")\">Update</button></td>";
