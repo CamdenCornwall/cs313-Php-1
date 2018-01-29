@@ -22,13 +22,22 @@
             <h1>Checkout</h1>
         </div>
         <div>
-            <form action="./confirm.php" method="post">
-                Address<br/>
-                Name:     <input type="text" name="name"/><br/>
-                Street:   <input type="text" name="street"/><br/>
-                City:     <input type="text" name="city"/><br/>
-                State:    <input type="text" name="state"/><br/>
-                Zip Code: <input type="text" name="zip"/><br/>
+        <h2>Address</h2><br>
+            <form action="confirm.php" method="post" target="_blank">
+                Full Name:<br>  
+                <input type="text" name="name"/>
+                <br>
+                Street:<br>
+                <input type="text" name="street"/>
+                <br>
+                City:<br>
+                <input type="text" name="city"/>
+                <br>
+                State:<br>
+                <input type="text" name="state"/>
+                <br>
+                Zip Code:<br>
+                <input type="text" name="zip"/><br>
                 <button type="submit" class="btn btn-success" onclick="location.href='confirm.php'">Ok</button>
             </form>
         </div>

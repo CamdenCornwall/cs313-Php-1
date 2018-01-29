@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Check Out</title>
+    <title>Thank You</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -21,7 +21,7 @@
     <main role="main" class="container">
 
         <div class="starter-template">
-            <h1>Confirm Purchase</h1>
+            <h1>Thank you for your purchase!</h1>
         </div>
         <div>
                 <?php
@@ -31,20 +31,20 @@
                     $state = htmlspecialchars($_REQUEST["state"]);
                     $zip = htmlspecialchars($_REQUEST["zip"]);
                     
-                    echo "<h3>Address</h3><br/>";
-                    echo "<p>".$name."<br/>";
-                    echo $street."<br/>";
-                    echo $city.", ".$state." ".$zip."</p><br/>";
+                    echo "<div><h3>Address</h3><br>";
+                    echo "<p>".$name."<br>";
+                    echo $street."<br>";
+                    echo $city.", ".$state." ".$zip."</p></div></br>";
                     
-                    echo "<h3>Items</h3><br/>";
+                    echo "<h3>Items</h3><br>";
                     echo "<table class=\"table\">";
                     
                     $rows = sizeof($_SESSION["cart"]);
                     $itemTypes = array( 1 => "Red Paint", 2 => "Blue Paint", 3 => "Yellow Paint", 4 => "White Paint",
                                          5 => "Grey Paint", 6 => "Black Paint");
-                    for ($i = 0; $i <= 7; $i++) {
+                    for ($i = 0; $i <= 6; $i++) {
                         if(isset($_SESSION["cart"][$i]) && $_SESSION["cart"][$i]["quantity"] > 0) {
-                            echo "<tr class=\"".($i + 1)."\"><td><img class=\"smItemImage\" src=\"img/paint".($i + 1).".png\" alt=\"item number".($i + 1)."\"></td>";
+                            echo "<tr class=\"".($i + 1)."\"><td><img class=\"img\" src=\"img/paint".($i + 1).".png\" alt=\"item number".($i + 1)."\"></td>";
                             echo "<td>".$itemTypes[$i + 1]."</td><td>Quantity: ".($i + 1)."</td></tr>";
                         }
                         if($rows == 0) {
@@ -55,16 +55,10 @@
                     session_unset();
                     session_destroy();
                 ?>
+                <button class="btn" type="button" onclick="location.href='shoppingCart.php'">
+               <span>Return To Store</span></button>
         </div>
-        <!-- <nav class="navbar fixed-bottom">
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav mr-auto">
-                
-            </ul>
-               <button class="btn btn-outline-success my-2 my-sm-0" id="cartButton" type="button" onclick="location.href='viewCart.php'">
-               <span>View Cart</span><div id="cartNum">0</div></button>
-        </div>
-    </nav> -->
+       
     </main>
     <!-- Bootstrap core JavaScript
     ================================================== -->

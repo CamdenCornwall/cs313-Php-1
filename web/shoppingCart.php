@@ -39,7 +39,7 @@
                     for ($i = 0; $i < $rows; $i++) {
                         echo "<tr>";
                         for ($j = 0; $j < $columns; $j++) {
-                            echo "<td><img class=\"itemImage\" src=\"img/paint".$itemNumber.".png\" alt=\"item number".$itemNumber."\"><br/>";
+                            echo "<td><img class=\"itemImage\" src=\"img/paint".$itemNumber.".png\" alt=\"item number".$itemNumber."\"><br>";
                             echo "<p>".$itemTypes[$itemNumber]."</p>";
                             echo "<input type=\"number\" name=\"item".$itemNumber."\" value=\"0\" id=\"item".$itemNumber."\"><button onclick=\"addToCart(".$itemNumber.", document.getElementById('item".$itemNumber."').value";
                             echo ")\" class=\"button\" type=\"submit\"><span>Add to Cart</span></button>";
