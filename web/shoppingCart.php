@@ -11,7 +11,7 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Super Mart</title>
+    <title>Super Paint Mart</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
@@ -22,14 +22,10 @@
 
 <body>
 
-    <nav>
-       
-    </nav>
-
     <main role="main" class="container">
 
         <div class="starter-template">
-            <h1>The Super Store.com</h1>
+            <h1>Only the Prettiest Paint Possible</h1>
             </br></hr>
         </div>
         <div class="table-responsive">
@@ -38,15 +34,15 @@
                     $rows = 2;
                     $columns = 4;
                     $itemNumber = 1;
-                    $itemTypes = array( 1 => "Standard Widget", 2 => "Ye Olde Widget", 3 => "Rich Man's Widget", 4 => "Poor Man's Widget",
-                                        5 => "Sparky Widget", 6 => "Pointy Widget", 7 => "Melty Widget", 8 => "Midnight Samba Widget");
+                    $itemTypes = array( 1 => "Red Paint", 2 => "Blue Paint", 3 => "Yellow Paint", 4 => "Green Paint",
+                                        5 => "Orange Paint", 6 => "Indigo Paint", 7 => "Grey Paint", 8 => "Black Paint");
                     for ($i = 0; $i < $rows; $i++) {
                         echo "<tr>";
                         for ($j = 0; $j < $columns; $j++) {
                             echo "<td><img class=\"itemImage\" src=\"images/wid".$itemNumber.".png\" alt=\"item number".$itemNumber."\"><br/>";
                             echo "<p>".$itemTypes[$itemNumber]."</p>";
                             echo "<input type=\"number\" name=\"item".$itemNumber."\" value=\"0\" id=\"item".$itemNumber."\"><button onclick=\"addToCart(".$itemNumber.", document.getElementById('item".$itemNumber."').value";
-                            echo ")\" class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\"><img src=\"images/shoppingCart.svg\" alt=\"Shopping Cart\"></button>";
+                            echo ")\" class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\"><span>Add to Cart</span></button>";
                             $itemNumber++;
                             echo "</td>";
                         }
@@ -55,17 +51,11 @@
                 ?>
             </table>
         </div>
-        <nav class="navbar navbar-expand-md navbar-light navColor fixed-bottom">
-        <a class="navbar-brand" href="../index.html"><img class="logo" src="../ocean.png" alt="Ocean Picture"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
+        <nav class="navbar fixed-bottom">
+        
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="viewCart.php">Shopping Cart</a>
-                </li>
+                
             </ul>
                <button class="btn btn-outline-success my-2 my-sm-0" id="cartButton" type="button" onclick="location.href='viewCart.php'"><img src="images/box.svg" alt="Shopping Cart"><div id="cartNum">0</div></button>
         </div>

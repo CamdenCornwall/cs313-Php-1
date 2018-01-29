@@ -6,43 +6,17 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
-
     <title>View Cart</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- Custom styles for this template -->
-    <link rel="stylesheet" type="text/css" href="homepageStyle.css">
+    <link rel="stylesheet" type="text/css" href="/css/homepageStyle.css">
 </head>
 
     
 <body>
-
-    <nav class="navbar navbar-expand-md navbar-light navColor fixed-top">
-        <a class="navbar-brand" href="#"><img class="logo" src="../ocean.png" alt="Ocean Picture"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./shoppingCart.php">Shopping</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Shopping Cart</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
 
     <main role="main" class="container">
 
@@ -53,8 +27,8 @@
             <table class="table">
                 <?php
                     $rows = sizeof($_SESSION["cart"]);
-                    $itemTypes = array( 1 => "Standard Widget", 2 => "Ye Olde Widget", 3 => "Rich Man's Widget", 4 => "Poor Man's Widget",
-                                        5 => "Sparky Widget", 6 => "Pointy Widget", 7 => "Melty Widget", 8 => "Midnight Samba Widget");
+                    $itemTypes = array( 1 => "Red Paint", 2 => "Blue Paint", 3 => "Yellow Paint", 4 => "Green Paint",
+                                        5 => "Orange Paint", 6 => "Indigo Paint", 7 => "Grey Paint", 8 => "Black Paint");
                     for ($i = 0; $i <= 7; $i++) {
                         if(isset($_SESSION["cart"][$i]) && $_SESSION["cart"][$i]["quantity"] > 0) {
                             echo "<tr class=\"".($i + 1)."\"><td><img class=\"smItemImage\" src=\"images/wid".($i + 1).".png\" alt=\"item number".($i + 1)."\"></td>";
@@ -74,6 +48,16 @@
                 <button type="button" class="btn btn-success" onclick="location.href='./checkout.php'">Check Out</button>
             </div>
         </div>
+        <nav class="navbar fixed-bottom">
+        
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                
+            </ul>
+               <button class="btn btn-outline-success my-2 my-sm-0" id="cartButton" type="button" onclick="location.href='viewCart.php'">
+               <span>View Cart</span><div id="cartNum">0</div></button>
+        </div>
+    </nav>
 
     </main>
     <!-- /.container -->
