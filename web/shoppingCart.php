@@ -51,11 +51,12 @@
                 ?>
             </table>
         </div>
-        <nav class="navbar fixed-bottom">
-        
+        <nav class="navbar navbar-expand-md navbar-light navColor fixed-bottom">
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
-                
+                <li class="nav-item">
+                    <a class="nav-link" href="./viewCart.php">Shopping Cart</a>
+                </li>
             </ul>
                <button class="btn btn-outline-success my-2 my-sm-0" id="cartButton" type="button" onclick="location.href='viewCart.php'"><img src="images/box.svg" alt="Shopping Cart"><div id="cartNum">0</div></button>
         </div>
