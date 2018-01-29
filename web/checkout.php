@@ -19,7 +19,7 @@
         
         <div class="center">
         <h3><strong>Enter your Address</strong></h3><br>
-            <form onsubmit="goConfirm()" method="POST" target="_blank">
+            <form onsubmit="goConfirm(), confirm.php" method="POST">
                 Full Name:<br>  
                 <input type="text" name="name" required>
                 <br>
