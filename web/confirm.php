@@ -34,7 +34,7 @@
                     echo "<div><h3>Address</h3><br>";
                     echo "<p>".$name."<br>";
                     echo $street."<br>";
-                    echo $city.", ".$state." ".$zip."</p></div></br>";
+                    echo $city.", ".$state." ".$zip."</p></div><br>";
                     
                     echo "<h3>Items</h3><br>";
                     echo "<table class=\"table\">";

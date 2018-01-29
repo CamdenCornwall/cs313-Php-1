@@ -41,7 +41,8 @@
                         for ($j = 0; $j < $columns; $j++) {
                             echo "<td><img class=\"itemImage\" src=\"img/paint".$sku.".png\" alt=\"item number".$sku."\"><br>";
                             echo "<p>".$itemTypes[$sku]."</p>";
-                            echo "<input type=\"number\" name=\"item".$sku."\" value=\"0\" id=\"item".$sku."\"><button onclick=\"addToCart(".$sku.", document.getElementById('item".$sku."').value";
+                            echo "<input type=\"number\" min=\"0\" name=\"item".$sku."\"";
+                            echo "value=\"0\" id=\"item".$sku."\"><button onclick=\"addToCart(".$sku.", document.getElementById('item".$sku."').value";
                             echo ")\" class=\"button\" type=\"submit\"><span>Add to Cart</span></button>";
                             $sku++;
                             echo "</td>";
