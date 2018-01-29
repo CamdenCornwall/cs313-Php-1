@@ -31,7 +31,7 @@
                                          5 => "Grey Paint", 6 => "Black Paint");
                     for ($i = 0; $i <= 7; $i++) {
                         if(isset($_SESSION["cart"][$i]) && $_SESSION["cart"][$i]["quantity"] > 0) {
-                            echo "<tr class=\"".($i + 1)."\"><td><img class=\"smItemImage\" src=\"images/wid".($i + 1).".png\" alt=\"item number".($i + 1)."\"></td>";
+                            echo "<tr class=\"".($i + 1)."\"><td><img class=\"smItemImage\" src=\"img/paint".($i + 1).".png\" alt=\"item number".($i + 1)."\"></td>";
                             echo "<td>".$itemTypes[$i + 1]."</td><td>Quantity: <input type=\"number\" name=\"item".($i + 1)."\" value=\"".$_SESSION["cart"][$i]["quantity"]."\" id=\"item".($i + 1)."\"></td>";
                             echo "<td><button type=\"button\" class=\"btn btn-sucess\" onclick=\"updateCart(".($i + 1).", document.getElementById('item".($i + 1)."').value";
                             echo ")\">Update</button></td>";

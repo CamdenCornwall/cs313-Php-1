@@ -40,11 +40,11 @@
                     echo "<table class=\"table\">";
                     
                     $rows = sizeof($_SESSION["cart"]);
-                    $itemTypes = array( 1 => "Red Paint", 2 => "Blue Paint", 3 => "Yellow Paint", 4 => "Green Paint",
-                                        5 => "Orange Paint", 6 => "Indigo Paint", 7 => "Grey Paint", 8 => "Black Paint");
+                    $itemTypes = array( 1 => "Red Paint", 2 => "Blue Paint", 3 => "Yellow Paint", 4 => "White Paint",
+                                         5 => "Grey Paint", 6 => "Black Paint");
                     for ($i = 0; $i <= 7; $i++) {
                         if(isset($_SESSION["cart"][$i]) && $_SESSION["cart"][$i]["quantity"] > 0) {
-                            echo "<tr class=\"".($i + 1)."\"><td><img class=\"smItemImage\" src=\"images/wid".($i + 1).".png\" alt=\"item number".($i + 1)."\"></td>";
+                            echo "<tr class=\"".($i + 1)."\"><td><img class=\"smItemImage\" src=\"img/paint".($i + 1).".png\" alt=\"item number".($i + 1)."\"></td>";
                             echo "<td>".$itemTypes[$i + 1]."</td><td>Quantity: ".($i + 1)."</td></tr>";
                         }
                         if($rows == 0) {
@@ -56,7 +56,7 @@
                     session_destroy();
                 ?>
         </div>
-        <nav class="navbar fixed-bottom">
+        <!-- <nav class="navbar fixed-bottom">
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
                 
@@ -64,7 +64,7 @@
                <button class="btn btn-outline-success my-2 my-sm-0" id="cartButton" type="button" onclick="location.href='viewCart.php'">
                <span>View Cart</span><div id="cartNum">0</div></button>
         </div>
-    </nav>
+    </nav> -->
     </main>
     <!-- Bootstrap core JavaScript
     ================================================== -->
