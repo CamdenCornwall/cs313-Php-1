@@ -22,24 +22,24 @@
             <h1>Checkout</h1>
         </div>
         <div class="center">
-        <h2>Address</h2><br>
+        <h2>Enter your Address</h2><br>
             <form action="confirm.php" method="post" target="_blank">
                 Full Name:<br>  
-                <input type="text" name="name"/>
+                <input type="text" name="name" required>
                 <br>
                 Street:<br>
-                <input type="text" name="street"/>
+                <input type="text" name="street" required>
                 <br>
                 City:<br>
-                <input type="text" name="city"/>
+                <input type="text" name="city" required>
                 <br>
                 State:<br>
-                <input type="text" name="state"/>
+                <input type="text" name="state" required>
                 <br>
                 Zip Code:<br>
-                <input type="text" name="zip"/><br>
+                <input type="text" name="zip" required><br>
                 <button type="submit" class="btn btn-success" onclick="location.href='confirm.php'">Ok</button>
-                <br>
+                <br><br><hr>
                 <button type="reset" class="btn btn-danger" onclick="location.href='shoppingCart.php'">Cancel</button>
             </form>
         </div>
