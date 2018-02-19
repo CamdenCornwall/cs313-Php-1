@@ -3,9 +3,6 @@
 
 	session_start(); 
 
-	//Set question number
-	require("dbConnect.php");
-	$db = get_db();
 
 	$number = $_GET['n'];
 
