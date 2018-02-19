@@ -15,7 +15,7 @@ $dbPassword = 'teacher_pass';
 else{
     $dbopts = parse_url($dbUrl);
 
-print "<p>$dbUrl</p>\n\n";
+// print "<p>$dbUrl</p>\n\n";
 
 $dbHost = $dbopts["host"];
 $dbPort = $dbopts["port"];
