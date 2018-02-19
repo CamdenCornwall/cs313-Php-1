@@ -1,7 +1,11 @@
 <?php include 'database.php'; ?>
 <?php
+	$statement = $db->prepare("SELECT COUNT(*) FROM questions");
+	$statement->execute();
 
- 
+	$questions = $statement->fetch(PDO::FETCH_ASSOC);
+
+	$total = $questions['count'];
 ?>
 <?php include 'quizHeader.php' ?>
 <body>

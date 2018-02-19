@@ -1,9 +1,10 @@
 <?php
+
 // default Heroku Postgres configuration URL
 $dbUrl = getenv('DATABASE_URL'); 
 
 if (empty($dbUrl)) {
-// create connection credentials
+//create connection credentials
 $dbHost = 'localhost';
 $dbPort = '5432';
 $dbName = 'quizzer';
@@ -15,7 +16,7 @@ $dbPassword = 'teacher_pass';
 else{
     $dbopts = parse_url($dbUrl);
 
-// print "<p>$dbUrl</p>\n\n";
+//print "<p>$dbUrl</p>\n\n";
 
 $dbHost = $dbopts["host"];
 $dbPort = $dbopts["port"];

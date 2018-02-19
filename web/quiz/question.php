@@ -1,20 +1,29 @@
 <?php include 'database.php'; ?>
 <?php 
 
-	session_start(); 
-
-
+	//Set question number
 	$number = $_GET['n'];
+	//get question totals
+	$stm1 = $db->prepare("SELECT COUNT(*) FROM questions");
+	$stm1->execute();
 
-	$query = "SELECT * FROM questions WHERE question_number = $number"
+	$questions = $stm1->fetch(PDO::FETCH_ASSOC);
+
+	$total = $questions['count'];
+
+	//get question_text
+	$query = "SELECT * FROM questions WHERE question_number = $number";
 	$statement = $db->prepare($query);
 
 	$statement->execute();
 	$question = $statement->fetch(PDO::FETCH_ASSOC);
 
+	//get choices or Options
+	// $query = "SELECT * FROM choices WHERE questionNum = $number";
+	// $choices = $db->prepare($query);
 
-		// $choices = $db->query("SELECT * FROM choices WHERE questionNum = '$number'")
-		
+	// $choices->execute();
+	// $choices->fetch(PDO::FETCH_ASSOC);
 	
 ?>
 <?php include 'quizHeader.php' ?>
@@ -32,9 +41,8 @@
 			</p>
 			<form method="post" action="process.php">
 				<ul class="choices">
-					<?php while($row = $choices->FETCH_ASSOC()): ?>
-						<li><input name="choice" type="radio" value="<?php echo $row['id']; ?>" /><?php echo $row['text']; ?></li>
-					<?php endwhile; ?>
+					
+				
 				</ul>
 				<input type="submit" value="Submit" />
 				<input type="hidden" name="number" value="<?php echo $number; ?>" />

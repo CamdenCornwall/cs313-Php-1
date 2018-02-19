@@ -1,5 +1,5 @@
 DROP DATABASE quizzer;
-
+DROP USER teacher
 -- Create a database and connect to it
 CREATE DATABASE quizzer;
 \c quizzer
@@ -23,7 +23,7 @@ CREATE TABLE choices (
 id SERIAL PRIMARY KEY NOT NULL,
 questionNum INT NOT NULL REFERENCES questions(question_number) ON UPDATE CASCADE ON DELETE CASCADE,
 is_correct boolean DEFAULT FALSE,  
-answer text
+answer_text text NOT NULL
 );
 
 -- Insert data into the new table
@@ -33,18 +33,18 @@ INSERT INTO questions (question_number, question_text)
   VALUES (2, 'What is the sound of a one handed clap?');
 
   -- insert choices
-  INSERT INTO choices (questionNum, is_correct, answer)
+  INSERT INTO choices (questionNum, is_correct, answer_text)
   VALUES (1, FALSE, '12 meters');
-  INSERT INTO choices (questionNum, is_correct, answer)
+  INSERT INTO choices (questionNum, is_correct, answer_text)
   VALUES (1, TRUE, '18 meters');
 
-  INSERT INTO choices (questionNum, is_correct, answer)
+  INSERT INTO choices (questionNum, is_correct, answer_text)
   VALUES (2, TRUE, 'It cannot be answered.');
   
-  INSERT INTO choices (questionNum, is_correct, answer)
+  INSERT INTO choices (questionNum, is_correct, answer_text)
   VALUES (2, FALSE, 'wind');
 
-  INSERT INTO choices (questionNum, is_correct, answer)
+  INSERT INTO choices (questionNum, is_correct, answer_text)
   VALUES (2, FALSE, 'walrus');
 
 
