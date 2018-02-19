@@ -14,8 +14,8 @@ CREATE TABLE categories(
 );
 
 CREATE TABLE questions (
-  id int(11) NOT NULL,
-  question_name text NOT NULL,
+  question_number int(11) NOT NULL,
+  question_text text NOT NULL,
   answer1 varchar(250) NOT NULL,
   answer2 varchar(250) NOT NULL,
   answer3 varchar(250) NOT NULL,
