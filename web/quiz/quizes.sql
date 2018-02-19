@@ -1,5 +1,5 @@
 DROP DATABASE quizzer;
-DROP USER teacher
+DROP USER teacher;
 -- Create a database and connect to it
 CREATE DATABASE quizzer;
 \c quizzer
