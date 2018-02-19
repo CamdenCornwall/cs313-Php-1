@@ -4,51 +4,21 @@
 	session_start(); 
 
 	//Set question number
-	// require("database.php");
-	// $db = get_db();
+	require("dbConnect.php");
+	$db = get_db();
 
 	$number = $_GET['n'];
 
-	try
-	{
-		// prepare the statement
-		$statement = $db->prepare("SELECT * FROM questions WHERE question_number = '$number'");
-		$question = $statement->fetch(PDO::FETCH_ASSOC);
+	$query = "SELECT * FROM questions WHERE question_number = $number"
+	$statement = $db->prepare($query);
 
-		$statement->execute();
+	$statement->execute();
+	$question = $statement->fetch(PDO::FETCH_ASSOC);
 
-		$choices = $db->query("SELECT * FROM choices WHERE questionNum = '$number'")
-		/*
-		*	Get total questions
-		*/
-		// $query = "SELECT * FROM `questions`";
-		//Get result
-		// $results = $psql->query($query) or die($psql->error.__LINE__);
-		// $total = $results->num_rows;
-			
-		/*
-		*	Get Question
-		*/
-		// $query = "SELECT * FROM `questions`
-		// 			WHERE question_number = $number";
-		// //Get result
-		// $result = $mysqli->query($query) or die($mysqli->error.__LINE__);
+
+		// $choices = $db->query("SELECT * FROM choices WHERE questionNum = '$number'")
 		
-		// 
-		
-		// /*
-		// *	Get Choices
-		// */
-		// $query = "SELECT * FROM `choices`
-		// 			WHERE question_number = $number";
-		// //Get results
-		// $choices = $mysqli->query($query) or die($mysqli->error.__LINE__);
-	}
-	catch (PDOException $ex)
-	{
-		echo "Error with DB. Details: $ex";
-		die();
-	}
+	
 ?>
 <?php include 'quizHeader.php' ?>
 <body>
