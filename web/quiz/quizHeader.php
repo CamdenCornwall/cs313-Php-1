@@ -6,16 +6,19 @@ echo "
 	<meta charset='utf-8' />
 	<title>Quizzer</title>
 	<link rel='stylesheet' href='css/quizStyle.css' type='text/css' />
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous'>
 </head>
-<nav>
+<nav class=''>
 	<ul>
 	    <li>
-	        <a href='index.php'>Home</a>        
+	        <a class='nounderline' href='index.php'>Home</a>        
 	    </li>
 		<li>
-			<a href='add.php'>Add Questions</a>
+			<a class='nounderline' href='add.php'>Add Questions</a>
 		</li>
-	        
+		<li class='rightSide'>
+			<a class='nounderline' href='login.php'>Account</a>
+	    </li>
 	    </ul>
 	</nav>
 
