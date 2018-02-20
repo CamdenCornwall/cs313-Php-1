@@ -17,13 +17,6 @@
 
 	$statement->execute();
 	$question = $statement->fetch(PDO::FETCH_ASSOC);
-
-	//get choices or Options
-	// $query = "SELECT * FROM choices WHERE questionNum = $number";
-	// $choices = $db->prepare($query);
-
-	// $choices->execute();
-	// $choices->fetch(PDO::FETCH_ASSOC);
 	
 ?>
 <?php include 'quizHeader.php' ?>
@@ -41,8 +34,15 @@
 			</p>
 			<form method="post" action="process.php">
 				<ul class="choices">
-					
-				
+					<?php 
+						//* get choices
+						$stmt3 = $db->prepare("SELECT id, is_correct, answer_text FROM choices WHERE questionNum = $number");
+						$stmt3->execute();
+
+						while($row = $stmt3->fetch(PDO::FETCH_ASSOC)){
+							echo "<li><input name='choice' type='radio' value='" . $row['id'] ."' />" . $row['answer_text'] ."</li>";
+						} 
+					?>
 				</ul>
 				<input type="submit" value="Submit" />
 				<input type="hidden" name="number" value="<?php echo $number; ?>" />

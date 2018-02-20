@@ -31,6 +31,8 @@ INSERT INTO questions (question_number, question_text)
   VALUES (1, 'How much wood could a wood chuck chuck if a wood chuck could chuck wood?');
 INSERT INTO questions (question_number, question_text)
   VALUES (2, 'What is the sound of a one handed clap?');
+INSERT INTO questions (question_number, question_text)
+  VALUES (3, 'Whos the baddest of them all?');
 
   -- insert choices
   INSERT INTO choices (questionNum, is_correct, answer_text)
@@ -52,3 +54,4 @@ INSERT INTO questions (question_number, question_text)
 -- Create a user that can access this table
 CREATE USER teacher WITH PASSWORD 'teacher_pass';
 GRANT SELECT, INSERT, UPDATE ON questions TO teacher;
+GRANT SELECT, INSERT, UPDATE ON choices TO teacher;
