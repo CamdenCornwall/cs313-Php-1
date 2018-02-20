@@ -1,8 +1,4 @@
-DROP DATABASE quizzer;
-DROP USER teacher;
--- Create a database and connect to it
-CREATE DATABASE quizzer;
-\c quizzer
+--heroku Database Test
 
 CREATE TABLE questions (
   id SERIAL PRIMARY KEY NOT NULL,
@@ -50,8 +46,3 @@ INSERT INTO questions (question_number, question_text)
   VALUES (2, FALSE, 'walrus');
 
 
-
--- Create a user that can access this table
-CREATE USER teacher WITH PASSWORD 'teacher_pass';
-GRANT SELECT, INSERT, UPDATE ON questions TO teacher;
-GRANT SELECT, INSERT, UPDATE ON choices TO teacher;
