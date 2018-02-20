@@ -1,15 +1,16 @@
 --heroku Database Test
+DROP TABLE IF EXISTS questions, users, choices;
 
 CREATE TABLE questions (
   id SERIAL PRIMARY KEY NOT NULL,
-  question_number INT NOT NULL,
-  question_text text NOT NULL,
-  UNIQUE(question_number)
+  question_number INT NOT NULL UNIQUE,
+  question_text text NOT NULL
+  
 );
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY NOT NULL,
-  user_name varchar(250) NOT NULL,
+  user_name varchar(250) NOT NULL UNIQUE,
   pass VARCHAR(250) NOT NULL,
   screenName VARCHAR(250) NOT NULL,
   score int NOT NULL
@@ -44,5 +45,4 @@ INSERT INTO questions (question_number, question_text)
 
   INSERT INTO choices (questionNum, is_correct, answer_text)
   VALUES (2, FALSE, 'walrus');
-
 
