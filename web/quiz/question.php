@@ -1,8 +1,10 @@
 <?php include 'database.php'; ?>
+<?php session_start(); ?>
 <?php 
 
 	//Set question number
 	$number = $_GET['n'];
+
 	//get question totals
 	$stm1 = $db->prepare("SELECT COUNT(*) FROM questions");
 	$stm1->execute();
@@ -12,8 +14,8 @@
 	$total = $questions['count'];
 
 	//get question_text
-	$query = "SELECT * FROM questions WHERE question_number = $number";
-	$statement = $db->prepare($query);
+	$statement = $db->prepare("SELECT * FROM questions WHERE question_number = :number");
+	$statement->bindParam(':number', $number, PDO::PARAM_INT);
 
 	$statement->execute();
 	$question = $statement->fetch(PDO::FETCH_ASSOC);
@@ -36,7 +38,7 @@
 				<ul class="choices">
 					<?php 
 						//* get choices
-						$stmt3 = $db->prepare("SELECT id, is_correct, answer_text FROM choices WHERE questionNum = $number");
+						$stmt3 = $db->prepare("SELECT id, is_correct, answer_text FROM choices WHERE question_number = $number");
 						$stmt3->execute();
 
 						while($row = $stmt3->fetch(PDO::FETCH_ASSOC)){

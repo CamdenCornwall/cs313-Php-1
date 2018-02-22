@@ -42,6 +42,10 @@
                 <input type="number" name="correct_choice" />
             </p>
             <p>
+                <label>Points Per Question:</label>
+                <input type="number" min="1" name="points_per" />
+            </p>
+            <p>
                 <label>Submit</label>
                 <input type="submit" name="submit" />
             </p>

@@ -1,15 +1,14 @@
 <?php include 'database.php'; ?>
 <?php session_start(); ?>
 <?php
+	$stmt = $db->prepare("SELECT COUNT(*) FROM questions");
+	$stmt->execute();
+	$questions = $stmt->fetch(PDO::FETCH_ASSOC);
+	$total = $questions['count'];
 
 // ?>
-<!DOCTYPE html>
-<html>
-	<head>
-	<meta charset="utf-8" />
-	<title>Quizzer</title>
-	<link rel="stylesheet" href="css/quizStyle.css" type="text/css" />
-</head>
+<?php include 'quizHeader.php'?>
+
 <body>
 	<header>
 		<div class="container">
@@ -20,9 +19,12 @@
 		<div class="container">
 			<h2>Test Complete</h2>
             <p>You have submited all answers.</p>
-            <p>Final Score: 5</p>
+            <p>Final Score: 
+			<?php echo $_SESSION['score']; echo " out of " . $total ." points possible"; $_SESSION = array();?></p>
 		<div class="container">
-			Copyright &copy; 2018, Quizzer
+		<form action="index.php" method="POST">
+    		<input type="submit" class="finish" name="end" value="Finish" />
+		</form>
 		</div>
 	</footer>
 </body>

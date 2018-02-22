@@ -1,15 +1,63 @@
 <?php include 'database.php'; ?>
 <?php session_start(); ?>
 <?php
+	
 
 	//Check to see if score is set_error_handler
-	if(!isset($_SESSION['score'])){
+	if(!isset($_SESSION["score"])){
 		$_SESSION['score'] = 0;
 	}
 	
 	if($_POST){
 		$number = $_POST['number'];
 		$selected_choice = $_POST['choice'];
-		$next = $number+1;
+		$next = $number + 1;
+		header("Location: ". $_SERVER['REQUEST_URI']. 'n='.$number); 
 		
+		/*
+		* Get points/Question
+		*/
+		$statement1 = $db->prepare("SELECT * FROM questions WHERE question_number = :number");
+		$statement1->bindParam(':number', $number, PDO::PARAM_INT);
+		$statement1->execute();
+		$results = $statement1->fetch(PDO::FETCH_ASSOC);
+		$pointsPer = $results['points_per'];
+	
+
+		/*
+		*	Get total questions
+		*/
+		$stmt = $db->prepare("SELECT COUNT(*) FROM questions");
+		$stmt->execute();
+		$questions = $stmt->fetch(PDO::FETCH_ASSOC);
+		$total = $questions['count'];
+		
+		
+		/*
+		*	Get correct choice
+		*/
+		$statement2 = $db->prepare("SELECT * FROM choices WHERE question_number = :number AND is_correct = TRUE");
+		$statement2->bindParam(':number', $number, PDO::PARAM_INT);
+		$statement2->execute();
+
+		//Get result
+		$result2 = $statement2->fetch(PDO::FETCH_ASSOC);
+
+		//Set correct choice
+		$correct_choice = $result2['id'];
+		
+		//Compare
+		if($correct_choice == $selected_choice){
+			//Answer is correct
+			$_SESSION['score'] += $pointsPer;
+		}
+
+		//Check if last question
+		if($number == $total){
+			header("Location: final.php");
+			exit();
+		} else {
+			header("Location: question.php?n=".$next);
+		}
+	}
     ?>

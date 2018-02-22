@@ -1,5 +1,8 @@
 <?php include 'database.php'; ?>
+<?php session_start(); ?>
+
 <?php
+	
 	$statement = $db->prepare("SELECT COUNT(*) FROM questions");
 	$statement->execute();
 
@@ -21,7 +24,7 @@
 			<ul>
 				<li class="noListStyle"><strong>Number of Questions: </strong><?php echo $total; ?></li>
 				<li class="noListStyle"><strong>Type: </strong>Multiple Choice</li>
-				<li class="noListStyle"><strong>Estimated Time: </strong><?php echo $total * .5; ?> Minutes</li>
+				<li class="noListStyle"><strong>Estimated Time: </strong><?php echo $total * .25; ?> Minutes</li>
 			</ul>
 			<a href="question.php?n=1" class="start">Start Quiz</a>
 		</div>
