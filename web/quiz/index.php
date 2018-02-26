@@ -15,11 +15,11 @@
 
 	$total = $questions['count'];
 
-	if($_SESSION['userType'] == "student"){
-	include 'quizHeader1.php'; 
+	if($_SESSION['userType'] == "teacher"){
+	include 'quizHeader.php'; 
 	}
 	else{
-		include 'quizHeader.php';
+		include 'quizHeader1.php';
 	}	
 ?>
 <body>
