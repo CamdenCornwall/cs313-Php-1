@@ -36,7 +36,7 @@
 	<?php 
 		$stmt2 = $db->prepare("UPDATE users SET score = :userScore  WHERE username = :username");
 		$stmt2->bindParam(':userScore', $_SESSION['score'], PDO::PARAM_INT);
-		$stmt2->bindParam(':username', $_SESSION['username'], PDO::PARAM_INT);
+		$stmt2->bindParam(':username', $_SESSION['username'], PDO::PARAM_STR);
 		$stmt2->execute();
 		
 	?></br>

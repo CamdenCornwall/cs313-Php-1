@@ -9,6 +9,7 @@
         die();
     }
     else{
+        $_SESSION['username'] = "";
         header("Location: teacher.php");
             die();
     }
