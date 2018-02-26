@@ -11,16 +11,13 @@ echo "
 <nav class=''>
 	<ul>
 	    <li>
-	        <a class='nounderline' href='index.php'>Home</a>        
+	        <a class='nounderline' href='index.php'>Quiz</a>        
 	    </li>
 		<li>
 			<a class='nounderline' href='add.php'>Add Questions</a>
 		</li>
-		// <li>
-		// 	<a class='nounderline' href='#'>Delete Quiz</a>
-		// </li>
 		<li>
-			<a class='nounderline' href='#' >You are Logged in as: " . $_SESSION['username'] . "</a>
+			<a class='nounderline' href='#' >Welcome: " . $_SESSION['username'] . "</a>
 		</li>
 		<li class='rightSide'>
 			<a class='nounderline' href='start.php'>Switch User</a>
