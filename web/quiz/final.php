@@ -5,8 +5,8 @@
 	$stmt->execute();
 	$questions = $stmt->fetch(PDO::FETCH_ASSOC);
 	$total = $questions['count'];
-
-// ?>
+	
+?>
 <?php include 'quizHeader.php'?>
 
 <body>
@@ -29,7 +29,13 @@
 
 	</main>
 	<footer>
-	<?php echo $_SESSION['qNum'];?></br>
+	<?php 
+		$stmt2 = $db->prepare("UPDATE users SET score = :userScore  WHERE username = :username");
+		$stmt2->bindParam(':userScore', $_SESSION['score'], PDO::PARAM_INT);
+		$stmt2->bindParam(':username', $_SESSION['username'], PDO::PARAM_INT);
+		$stmt2->execute();
+		
+	?></br>
 	<?php echo $_SESSION['score'];?>
 
 	</footer>
