@@ -6,16 +6,8 @@
 	$questions = $stmt->fetch(PDO::FETCH_ASSOC);
 	$total = $questions['count'];
 
-	//
-	$statement2 = $db->prepare("SELECT * FROM choices WHERE question_number = :number AND id = :selected_choice");
-		$statement2->bindParam(':number', $number, PDO::PARAM_INT);
-		$statement2->bindParam(':selected_choice', $selected_choice, PDO::PARAM_INT);
-		$statement2->execute();
+	//print_r($_SESSION);
 
-		$result2 = $statement2->fetch(PDO::FETCH_ASSOC);
-		$correct_choice = $result2['is_correct'];
-		
-	//jkhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
 	if($_SESSION['userType'] == "student"){
 		include 'quizHeader1.php'; 
 		}
@@ -35,8 +27,7 @@
 			<h2>Test Complete</h2>
             <p>You have submited all answers.</p>
             <p>Final Score: 
-			<?php echo $_SESSION['score']; echo " out of " . $total ." points possible";
-			echo "<h1>" .$correct_choice ."</h1>";?></p>
+			<?php echo $_SESSION['score']; echo " out of " . $total ." points possible";?></p>
 			<div class="container">
 			<form action="index.php" method="POST">
     		<input type="submit" class="finish" name="end" value="Finish" />

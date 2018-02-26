@@ -1,7 +1,7 @@
 <?php include 'database.php'; ?>
 <?php session_start(); ?>
 <?php 
-
+session_unset(); 
     /**********************************************************
 * File: home.php
 * Author: Br. Burton
