@@ -57,7 +57,7 @@
 			$_SESSION['score'] += $pointsPer;
 		}
 		else{
-			$_SESSION['score'] += 1;
+			//$_SESSION['score'] += 1;
 		}
 
 		//Check if last question
