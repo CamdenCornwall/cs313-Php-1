@@ -52,7 +52,7 @@
 		$correct_choice = $result2['is_correct'];
 		
 		//Compare
-		if($correct_choice){
+		if(true){
 			//Answer is correct
 			$_SESSION['score'] += $pointsPer;
 		}
