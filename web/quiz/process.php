@@ -6,9 +6,12 @@
 		$_SESSION['qNum'] = 1;
 	}
 	//Check to see if score is set
-	// if(!isset($_SESSION["score"])){
-	// 	$_SESSION['score'] = 0;
-	// }
+	if(!isset($_SESSION["score"])){
+		$_SESSION['score'] = 0;
+	}
+	else{
+		$userScore = $_SESSION['score'];
+	}
 	
 	if($_POST){
 		// $number = $_POST['number'];
@@ -17,7 +20,7 @@
 		$_SESSION['qNum'] ++;
 		$number = $_SESSION['qNum'];
 		header("Location: ". $_SERVER['REQUEST_URI']); 
-		
+
 		/*
 		* Get points/Question
 		*/
@@ -52,9 +55,9 @@
 		$correct_choice = $result2['is_correct'];
 		
 		//Compare
-		if(true){
+		if($correct_choice == 't'){
 			//Answer is correct
-			$_SESSION['score'] += $pointsPer;
+			$_SESSION['score'] = $userScore + $pointsPer;
 		}
 		else{
 			//$_SESSION['score'] += 1;
