@@ -46,7 +46,7 @@
 	</main>
 	<footer>
 		<div class="container">
-			Copyright &copy; 2018, Quizzer</br>	<?php print_r($_SESSION);?>
+			Copyright &copy; 2018, Quizzer</br>	
 		</div>
 	</footer>
 </body>
