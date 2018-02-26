@@ -4,12 +4,12 @@
 
     if ($teacherName == "teacher"){
         $_SESSION['userType'] = "teacher";
-        $_SESSION['username'] = "Prof";
+        $_SESSION["username"] = "Prof";
         header("Location: index.php");
         die();
     }
     else{
-        $_SESSION['username'] = "";
+        $_SESSION['username'] = "User";
         header("Location: teacher.php");
             die();
     }
