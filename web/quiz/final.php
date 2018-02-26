@@ -40,7 +40,11 @@
 		$stmt2->execute();
 		
 	?></br>
-	<?php echo $_SESSION['score'];?>
+	<?php 
+		echo $_SESSION['score'];
+		$_SESSION['qNum'] = 1;
+
+	?>
 
 	</footer>
 </body>
