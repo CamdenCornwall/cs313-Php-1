@@ -21,11 +21,17 @@
             <p>You have submited all answers.</p>
             <p>Final Score: 
 			<?php echo $_SESSION['score']; echo " out of " . $total ." points possible"; $_SESSION = array();?></p>
-		<div class="container">
-		<form action="index.php" method="POST">
+			<div class="container">
+			<form action="index.php" method="POST">
     		<input type="submit" class="finish" name="end" value="Finish" />
 		</form>
 		</div>
+
+	</main>
+	<footer>
+	<?php echo $_SESSION['qNum'];?></br>
+	<?php echo $_SESSION['score'];?>
+
 	</footer>
 </body>
 </html>

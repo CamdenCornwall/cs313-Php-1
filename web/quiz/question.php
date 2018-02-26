@@ -1,9 +1,16 @@
 <?php include 'database.php'; ?>
 <?php session_start(); ?>
 <?php 
-
-	//Set question number
-	$number = $_GET['n'];
+	if (!isset($_SESSION['qNum']))
+	{
+		$_SESSION['qNum'] = 1;
+	}
+	//Check to see if score is set
+	if(!isset($_SESSION["score"])){
+		$_SESSION['score'] = 0;
+	}
+	//Set question number Chane this to a 
+	$number = $_SESSION['qNum'];
 
 	//get question totals
 	$stm1 = $db->prepare("SELECT COUNT(*) FROM questions");
@@ -21,7 +28,7 @@
 	$question = $statement->fetch(PDO::FETCH_ASSOC);
 	
 ?>
-<?php include 'quizHeader.php' ?>
+<?php include 'quizHeader1.php' ?>
 <body>
 	<header>
 		<div class="container">
@@ -38,7 +45,9 @@
 				<ul class="choices">
 					<?php 
 						//* get choices
-						$stmt3 = $db->prepare("SELECT id, is_correct, answer_text FROM choices WHERE question_number = $number");
+						$stmt3 = $db->prepare("SELECT id, is_correct, answer_text FROM choices WHERE question_number = :number");
+						$stmt3->bindParam(':number', $number, PDO::PARAM_INT);
+
 						$stmt3->execute();
 
 						while($row = $stmt3->fetch(PDO::FETCH_ASSOC)){
@@ -55,6 +64,7 @@
 		<div class="container">
 			Copyright &copy; 2018, Quizzer
 		</div>
+		<?php echo $_SESSION['qNum'];?>
 	</footer>
 </body>
 </html>

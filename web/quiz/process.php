@@ -1,18 +1,22 @@
 <?php include 'database.php'; ?>
 <?php session_start(); ?>
 <?php
-	
-
-	//Check to see if score is set_error_handler
-	if(!isset($_SESSION["score"])){
-		$_SESSION['score'] = 0;
+	if (!isset($_SESSION['qNum']))
+	{
+		$_SESSION['qNum'] = 1;
 	}
+	//Check to see if score is set
+	// if(!isset($_SESSION["score"])){
+	// 	$_SESSION['score'] = 0;
+	// }
 	
 	if($_POST){
-		$number = $_POST['number'];
+		// $number = $_POST['number'];
 		$selected_choice = $_POST['choice'];
-		$next = $number + 1;
-		header("Location: ". $_SERVER['REQUEST_URI']. 'n='.$number); 
+		// $next = $number + 1;
+		$_SESSION['qNum'] ++;
+		$number = $_SESSION['qNum'];
+		header("Location: ". $_SERVER['REQUEST_URI']); 
 		
 		/*
 		* Get points/Question
@@ -36,7 +40,7 @@
 		/*
 		*	Get correct choice
 		*/
-		$statement2 = $db->prepare("SELECT * FROM choices WHERE question_number = :number AND is_correct = TRUE");
+		$statement2 = $db->prepare("SELECT * FROM choices WHERE question_number = :number AND is_correct = true");
 		$statement2->bindParam(':number', $number, PDO::PARAM_INT);
 		$statement2->execute();
 
@@ -47,17 +51,18 @@
 		$correct_choice = $result2['id'];
 		
 		//Compare
-		if($correct_choice == $selected_choice){
+		if($selected_choice == $correct_choice){
 			//Answer is correct
 			$_SESSION['score'] += $pointsPer;
 		}
 
 		//Check if last question
-		if($number == $total){
+		if($number > $total){
 			header("Location: final.php");
 			exit();
 		} else {
-			header("Location: question.php?n=".$next);
+			header("Location: question.php");
+			die();
 		}
 	}
     ?>

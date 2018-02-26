@@ -2,15 +2,26 @@
 <?php session_start(); ?>
 
 <?php
-	
+	if (!isset($_SESSION['qNum']))
+	{
+		$_SESSION['qNum'] = 1;
+	}
+	$_SESSION['score'] = 0;
+
 	$statement = $db->prepare("SELECT COUNT(*) FROM questions");
 	$statement->execute();
 
 	$questions = $statement->fetch(PDO::FETCH_ASSOC);
 
 	$total = $questions['count'];
+
+	if($_SESSION['userType'] == "student"){
+	include 'quizHeader1.php'; 
+	}
+	else{
+		include 'quizHeader.php';
+	}	
 ?>
-<?php include 'quizHeader.php' ?>
 <body>
 	<header>
 		<div class="container">
@@ -19,14 +30,14 @@
 	</header>
 	<main>
 		<div class="container">
-			<h2>Test Your Knowledge</h2>
-			<p>This is a multiple choice quiz to test your knowledge.</p>
+			<h2>Test Quiz</h2>
+			<p>This is the default quiz.</p>
 			<ul>
 				<li class="noListStyle"><strong>Number of Questions: </strong><?php echo $total; ?></li>
 				<li class="noListStyle"><strong>Type: </strong>Multiple Choice</li>
 				<li class="noListStyle"><strong>Estimated Time: </strong><?php echo $total * .5; ?> Minutes</li>
 			</ul>
-			<a href="question.php?n=1" class="start">Start Quiz</a>
+			<a href="question.php" class="start">Start Quiz</a>
 		</div>
 	</main>
 	<footer>
