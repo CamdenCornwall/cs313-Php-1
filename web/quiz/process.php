@@ -51,9 +51,12 @@
 		$correct_choice = $result2['id'];
 		
 		//Compare
-		if($selected_choice == $correct_choice){
+		if($correct_choice == $selected_choice){
 			//Answer is correct
 			$_SESSION['score'] += $pointsPer;
+		}
+		else{
+			$_SESSION['score'] += 1;
 		}
 
 		//Check if last question
