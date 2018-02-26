@@ -40,18 +40,19 @@
 		/*
 		*	Get correct choice
 		*/
-		$statement2 = $db->prepare("SELECT * FROM choices WHERE question_number = :number AND is_correct = true");
+		$statement2 = $db->prepare("SELECT * FROM choices WHERE question_number = :number AND id = :selected_choice");
 		$statement2->bindParam(':number', $number, PDO::PARAM_INT);
+		$statement2->bindParam(':selected_choice', $selected_choice, PDO::PARAM_INT);
 		$statement2->execute();
 
 		//Get result
 		$result2 = $statement2->fetch(PDO::FETCH_ASSOC);
 
 		//Set correct choice
-		$correct_choice = $result2['id'];
+		$correct_choice = $result2['is_correct'];
 		
 		//Compare
-		if($correct_choice == $selected_choice){
+		if($correct_choice){
 			//Answer is correct
 			$_SESSION['score'] += $pointsPer;
 		}
