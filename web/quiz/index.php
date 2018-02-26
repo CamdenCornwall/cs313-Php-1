@@ -6,6 +6,10 @@
 	{
 		$_SESSION['qNum'] = 1;
 	}
+	if (!isset(	$_SESSION['userType']))
+	{
+		$_SESSION['userType'] = 'student';
+	}
 	$_SESSION['score'] = 0;
 
 	$statement = $db->prepare("SELECT COUNT(*) FROM questions");
@@ -16,7 +20,7 @@
 	$total = $questions['count'];
 
 	if($_SESSION['userType'] == "teacher"){
-	include 'quizHeader.php'; 
+		include 'quizHeader.php'; 	
 	}
 	else{
 		include 'quizHeader1.php';
