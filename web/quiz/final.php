@@ -14,7 +14,7 @@
 
 		$result2 = $statement2->fetch(PDO::FETCH_ASSOC);
 		$correct_choice = $result2['is_correct'];
-		echo "<h1>" .$correct_choice ."</h1>";
+		
 	//jkhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
 	if($_SESSION['userType'] == "student"){
 		include 'quizHeader1.php'; 
@@ -35,7 +35,8 @@
 			<h2>Test Complete</h2>
             <p>You have submited all answers.</p>
             <p>Final Score: 
-			<?php echo $_SESSION['score']; echo " out of " . $total ." points possible";?></p>
+			<?php echo $_SESSION['score']; echo " out of " . $total ." points possible";
+			echo "<h1>" .$correct_choice ."</h1>";?></p>
 			<div class="container">
 			<form action="index.php" method="POST">
     		<input type="submit" class="finish" name="end" value="Finish" />
