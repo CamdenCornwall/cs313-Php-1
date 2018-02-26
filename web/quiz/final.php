@@ -6,9 +6,13 @@
 	$questions = $stmt->fetch(PDO::FETCH_ASSOC);
 	$total = $questions['count'];
 	
+	if($_SESSION['userType'] == "student"){
+		include 'quizHeader1.php'; 
+		}
+		else{
+			include 'quizHeader.php';
+		}	
 ?>
-<?php include 'quizHeader.php'?>
-
 <body>
 	<header>
 		<div class="container">
@@ -20,7 +24,7 @@
 			<h2>Test Complete</h2>
             <p>You have submited all answers.</p>
             <p>Final Score: 
-			<?php echo $_SESSION['score']; echo " out of " . $total ." points possible"; $_SESSION = array();?></p>
+			<?php echo $_SESSION['score']; echo " out of " . $total ." points possible";?></p>
 			<div class="container">
 			<form action="index.php" method="POST">
     		<input type="submit" class="finish" name="end" value="Finish" />
