@@ -1,5 +1,5 @@
 <?php
-						
+	session_start();				
     $teacherName = $_POST['tName'];
     $name = "Prof";
     $noName = "User";
