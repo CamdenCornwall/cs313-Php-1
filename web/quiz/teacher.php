@@ -1,7 +1,7 @@
 <?php
 include "database.php";
 session_start();
-$_SESSION['username']['score']['userType'] = array();
+// $_SESSION['username']['score']['userType'] = array();
     
 ?>
 <!DOCTYPE html>

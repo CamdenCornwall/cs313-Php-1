@@ -55,7 +55,7 @@
 		$correct_choice = $result2['is_correct'];
 		
 		//Compare
-		if($correct_choice == 't'){
+		if($correct_choice){
 			//Answer is correct
 			$_SESSION['score'] = $userScore + $pointsPer;
 		}

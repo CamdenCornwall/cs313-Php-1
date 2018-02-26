@@ -5,13 +5,24 @@
 	$stmt->execute();
 	$questions = $stmt->fetch(PDO::FETCH_ASSOC);
 	$total = $questions['count'];
-	
+
+	//
+	$statement2 = $db->prepare("SELECT * FROM choices WHERE question_number = :number AND id = :selected_choice");
+		$statement2->bindParam(':number', $number, PDO::PARAM_INT);
+		$statement2->bindParam(':selected_choice', $selected_choice, PDO::PARAM_INT);
+		$statement2->execute();
+
+		$result2 = $statement2->fetch(PDO::FETCH_ASSOC);
+		$correct_choice = $result2['is_correct'];
+		echo "<h1>" .$correct_choice ."</h1>";
+	//jkhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
 	if($_SESSION['userType'] == "student"){
 		include 'quizHeader1.php'; 
 		}
 		else{
 			include 'quizHeader.php';
 		}	
+		
 ?>
 <body>
 	<header>
