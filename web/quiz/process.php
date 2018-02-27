@@ -13,24 +13,16 @@
 		$userScore = $_SESSION['score'];
 	}
 	
-	if($_POST){
+	if($_POST)
+	{
+
 		// $number = $_POST['number'];
 		$selected_choice = $_POST['choice'];
 		// $next = $number + 1;
 		$_SESSION['qNum'] ++;
 		$number = $_SESSION['qNum'];
 		header("Location: ". $_SERVER['REQUEST_URI']); 
-
-		/*
-		* Get points/Question
-		*/
-		$statement1 = $db->prepare("SELECT * FROM questions WHERE question_number = :number");
-		$statement1->bindParam(':number', $number, PDO::PARAM_INT);
-		$statement1->execute();
-		$results = $statement1->fetch(PDO::FETCH_ASSOC);
-		$pointsPer = $results['points_per'];
-	
-
+	}
 		/*
 		*	Get total questions
 		*/
@@ -39,6 +31,14 @@
 		$questions = $stmt->fetch(PDO::FETCH_ASSOC);
 		$total = $questions['count'];
 		
+		/*
+		* Get points/Question
+		*/
+		$statement1 = $db->prepare("SELECT * FROM questions WHERE question_number = :number");
+		$statement1->bindParam(':number', $number, PDO::PARAM_INT);
+		$statement1->execute();
+		$results = $statement1->fetch(PDO::FETCH_ASSOC);
+		$pointsPer = $results['points_per'];
 		
 		/*
 		*	Get correct choice
@@ -51,10 +51,10 @@
 		//Get result
 		$result2 = $statement2->fetch(PDO::FETCH_ASSOC);
 
-		//Set correct choice
+		//Set correct choice to either true or false
 		$correct_choice = $result2['is_correct'];
 		
-		//Compare
+		//if the choice value is true...
 		if($correct_choice){
 			//Answer is correct
 			$_SESSION['score'] = $userScore + $pointsPer;
@@ -62,6 +62,11 @@
 		else{
 			//$_SESSION['score'] += 1;
 		}
+
+
+
+
+
 
 		//Check if last question
 		if($number > $total){
@@ -71,5 +76,5 @@
 			header("Location: question.php");
 			die();
 		}
-	}
+	
     ?>

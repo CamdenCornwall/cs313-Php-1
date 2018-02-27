@@ -1,10 +1,14 @@
 <?php include 'database.php'; ?>
 <?php session_start(); ?>
 <?php
-	$stmt = $db->prepare("SELECT COUNT(*) FROM questions");
+	$stmt = $db->prepare("SELECT * FROM questions");
 	$stmt->execute();
-	$questions = $stmt->fetch(PDO::FETCH_ASSOC);
-	$total = $questions['count'];
+	$totalPoints = 0;
+	while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+		
+		$totalPoints += $row['points_per'];
+		//echo "<li><input name='choice' type='radio' value='" . $row['id'] ."' />" . $row['answer_text'] ."</li>";
+	} 
 
 	//print_r($_SESSION);
 
@@ -27,7 +31,7 @@
 			<h2>Test Complete</h2>
             <p>You have submited all answers.</p>
             <p>Final Score: 
-			<?php echo $_SESSION['score']; echo " out of " . $total ." points possible";?></p>
+			<?php echo $_SESSION['score']; echo " out of " . $totalPoints ." points possible";?></p>
 			<div class="container">
 			<form action="index.php" method="POST">
     		<input type="submit" class="finish" name="end" value="Finish" />
