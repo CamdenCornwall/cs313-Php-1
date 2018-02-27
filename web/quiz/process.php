@@ -51,7 +51,7 @@
 
 		//Get result
 		$result2 = $statement2->fetch(PDO::FETCH_ASSOC);
-	}
+	
 		//Set correct choice to either true or false
 		$correct_choice = $result2['is_correct'];
 		echo "$selected_choice </br>";
@@ -60,7 +60,7 @@
 		echo "</br>";
 		var_dump($correct_choice);
 
-
+	}
 		//if the choice value is true...
 		if($correct_choice){
 			//Answer is correct

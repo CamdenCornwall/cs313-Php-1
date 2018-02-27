@@ -51,11 +51,11 @@
 						$stmt3->execute();
 
 						while($row = $stmt3->fetch(PDO::FETCH_ASSOC)){
-							echo "<li><input name='choice' type='radio' value='" . $row['id'] ."' />" . $row['answer_text'] ."</li>";
+							echo "<li><input name='choice' type='radio' value='" . 2 ."' />" . $row['answer_text'] ."</li>";
 						} 
 					?>
 				</ul>
-				<input type="submit" value="Submit" />
+				<input name="next" type="submit" value="Submit" />
 				<input type="hidden" name="number" value="<?php echo $number; ?>" />
 			</form>
 		</div>
