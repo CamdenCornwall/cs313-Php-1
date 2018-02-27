@@ -53,6 +53,7 @@
 
 		//Set correct choice to either true or false
 		$correct_choice = $result2['is_correct'];
+		echo "$selected_choice </br>";
 		echo var_dump($correct_choice);
 		var_dump($correct_choice);
 
