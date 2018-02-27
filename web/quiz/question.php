@@ -7,7 +7,7 @@
 	}
 	//Check to see if score is set
 	if(!isset($_SESSION["score"])){
-		$_SESSION['score'] = 0;
+		$_SESSION["score"] = 0;
 	}
 	//Set question number Chane this to a 
 	$number = $_SESSION['qNum'];

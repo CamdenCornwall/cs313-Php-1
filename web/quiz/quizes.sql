@@ -36,6 +36,8 @@ INSERT INTO questions (question_number, points_per, question_text)
   VALUES (1, FALSE, '12 meters');
   INSERT INTO choices (question_number, is_correct, answer_text)
   VALUES (1, TRUE, '18 meters');
+  INSERT INTO choices (question_number, is_correct, answer_text)
+  VALUES (1, FALSE, '30 meters');
 
   INSERT INTO choices (question_number, is_correct, answer_text)
   VALUES (2, TRUE, 'It cannot be answered.');

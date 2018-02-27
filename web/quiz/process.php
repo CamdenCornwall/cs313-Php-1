@@ -7,10 +7,10 @@
 	}
 	//Check to see if score is set
 	if(!isset($_SESSION["score"])){
-		$_SESSION['score'] = 0;
+		$_SESSION["score"] = 0;
 	}
 	else{
-		$userScore = $_SESSION['score'];
+		$userScore = $_SESSION["score"];
 	}
 	
 	if($_POST)
@@ -53,28 +53,24 @@
 
 		//Set correct choice to either true or false
 		$correct_choice = $result2['is_correct'];
-		
+		echo "$correct_choice";
 		//if the choice value is true...
 		if($correct_choice){
 			//Answer is correct
-			$_SESSION['score'] = $userScore + $pointsPer;
+			$_SESSION["score"] = $userScore + $pointsPer;
 		}
 		else{
 			//$_SESSION['score'] += 1;
 		}
 
 
-
-
-
-
 		//Check if last question
-		if($number > $total){
-			header("Location: final.php");
-			exit();
-		} else {
-			header("Location: question.php");
-			die();
-		}
+		// if($number > $total){
+		// 	header("Location: final.php");
+		// 	exit();
+		// } else {
+		// 	header("Location: question.php");
+		// 	die();
+		// }
 	
     ?>
