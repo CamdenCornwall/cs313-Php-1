@@ -64,7 +64,7 @@
 		<div class="container">
 			Copyright &copy; 2018, Quizzer
 		</div>
-		<?php echo $_SESSION['qNum'];?>
+		<?php print_r($_SESSION);?>
 	</footer>
 </body>
 </html>
