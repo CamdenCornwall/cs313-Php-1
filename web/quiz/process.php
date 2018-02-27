@@ -14,7 +14,7 @@
 	}
 	echo var_dump($_POST);
 	echo "</br>";
-	if($_POST)
+	if(!empty($_POST['next']))
 	{
 
 		// $number = $_POST['number'];
@@ -23,7 +23,7 @@
 		$_SESSION['qNum'] ++;
 		$number = $_SESSION['qNum'];
 		header("Location: ". $_SERVER['REQUEST_URI']); 
-	}
+	
 		/*
 		*	Get total questions
 		*/
@@ -51,7 +51,7 @@
 
 		//Get result
 		$result2 = $statement2->fetch(PDO::FETCH_ASSOC);
-
+	}
 		//Set correct choice to either true or false
 		$correct_choice = $result2['is_correct'];
 		echo "$selected_choice </br>";
