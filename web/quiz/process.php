@@ -12,7 +12,8 @@
 	else{
 		$userScore = $_SESSION["score"];
 	}
-	
+	echo var_dump($_POST);
+	echo "</br>";
 	if($_POST)
 	{
 
@@ -43,7 +44,7 @@
 		/*
 		*	Get correct choice
 		*/
-		$statement2 = $db->prepare("SELECT * FROM choices WHERE question_number = :number AND id = :selected_choice");
+		$statement2 = $db->prepare("SELECT * FROM choices WHERE question_number = ':number' AND id = ':selected_choice'");
 		$statement2->bindParam(':number', $number, PDO::PARAM_INT);
 		$statement2->bindParam(':selected_choice', $selected_choice, PDO::PARAM_INT);
 		$statement2->execute();
@@ -54,7 +55,9 @@
 		//Set correct choice to either true or false
 		$correct_choice = $result2['is_correct'];
 		echo "$selected_choice </br>";
+		echo "</br>";
 		echo var_dump($correct_choice);
+		echo "</br>";
 		var_dump($correct_choice);
 
 

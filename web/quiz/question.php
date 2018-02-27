@@ -41,7 +41,7 @@
 			<p class="question">
 				<?php echo $question['question_text']; ?>
 			</p>
-			<form method="post" action="process.php">
+			<form method="POST" action="process.php">
 				<ul class="choices">
 					<?php 
 						//* get choices
