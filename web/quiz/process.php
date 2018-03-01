@@ -14,7 +14,7 @@
 	}
 	echo var_dump($_POST);
 	echo "</br>";
-	if(!empty($_POST['next']))
+	if(!empty($_POST['choice']))
 	{
 
 		// $number = $_POST['number'];
@@ -71,13 +71,13 @@
 		}
 
 
-		//Check if last question
-		// if($number > $total){
-		// 	header("Location: final.php");
-		// 	exit();
-		// } else {
-		// 	header("Location: question.php");
-		// 	die();
-		// }
+		// Check if last question
+		if($number > $total){
+			header("Location: final.php");
+			exit();
+		} else {
+			header("Location: question.php");
+			die();
+		}
 	
     ?>
