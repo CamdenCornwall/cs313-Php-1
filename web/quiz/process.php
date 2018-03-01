@@ -12,10 +12,10 @@
 	else{
 		$userScore = $_SESSION["score"];
 	}
-	echo var_dump($_POST);
-	echo "</br>";
-	if(!empty($_POST['choice']))
-	{
+	// echo var_dump($_POST);
+	// echo "</br>";
+	// if(!empty($_POST['choice']))
+	// {
 
 		// $number = $_POST['number'];
 		$selected_choice = $_POST['choice'];
@@ -60,7 +60,7 @@
 		echo "</br>";
 		var_dump($correct_choice);
 
-	}
+	// }
 		//if the choice value is true...
 		if($correct_choice){
 			//Answer is correct
