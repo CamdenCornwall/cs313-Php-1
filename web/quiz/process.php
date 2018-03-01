@@ -14,16 +14,15 @@
 	}
 	// echo var_dump($_POST);
 	// echo "</br>";
-	// if(!empty($_POST['choice']))
-	// {
-
+	if(!empty($_POST['choice']))
+	{
 		// $number = $_POST['number'];
 		$selected_choice = $_POST['choice'];
 		// $next = $number + 1;
 		$_SESSION['qNum'] ++;
 		$number = $_SESSION['qNum'];
 		header("Location: ". $_SERVER['REQUEST_URI']); 
-	
+	}
 		/*
 		*	Get total questions
 		*/
@@ -54,13 +53,13 @@
 	
 		//Set correct choice to either true or false
 		$correct_choice = $result2['is_correct'];
-		echo "$selected_choice </br>";
-		echo "</br>";
-		echo var_dump($correct_choice);
-		echo "</br>";
-		var_dump($correct_choice);
+		// echo "$selected_choice </br>";
+		// echo "</br>";
+		// echo var_dump($correct_choice);
+		// echo "</br>";
+		// var_dump($correct_choice);
 
-	// }
+	
 		//if the choice value is true...
 		if($correct_choice){
 			//Answer is correct
