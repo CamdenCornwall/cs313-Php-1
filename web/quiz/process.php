@@ -43,16 +43,16 @@
 		/*
 		*	Get correct choice
 		*/
-		$statement2 = $db->prepare("SELECT * FROM choices WHERE question_number = ':number' AND id = ':selected_choice'");
+		$statement2 = $db->prepare("SELECT * FROM choices WHERE question_number = ':number' AND is_correct = TRUE");
 		$statement2->bindParam(':number', $number, PDO::PARAM_INT);
-		$statement2->bindParam(':selected_choice', $selected_choice, PDO::PARAM_INT);
+		// $statement2->bindParam(':selected_choice', $selected_choice, PDO::PARAM_INT);
 		$statement2->execute();
 
 		//Get result
 		$result2 = $statement2->fetch(PDO::FETCH_ASSOC);
 	
 		//Set correct choice to either true or false
-		$correct_choice = $result2['is_correct'];
+		$correct_choice = $result2['id'];
 		// echo "$selected_choice </br>";
 		// echo "</br>";
 		// echo var_dump($correct_choice);
@@ -61,7 +61,7 @@
 
 	
 		//if the choice value is true...
-		if($correct_choice){
+		if($correct_choice == $selected_choice){
 			//Answer is correct
 			$_SESSION["score"] = $userScore + $pointsPer;
 		}
