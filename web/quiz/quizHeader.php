@@ -17,6 +17,9 @@ echo "
 			<a class='nounderline' href='add.php'>Add Questions</a>
 		</li>
 		<li>
+			<a class='nounderline' href='stuScore.php'>Student's Scores</a>
+		</li>
+		<li>
 			<a class='nounderline' href='#' >Welcome: " . $_SESSION['username'] . "</a>
 		</li>
 		<li class='rightSide'>
