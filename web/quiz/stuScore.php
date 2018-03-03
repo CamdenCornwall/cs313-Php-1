@@ -12,7 +12,7 @@
 	<title>Quizzer</title>
 	<link rel='stylesheet' href='css/quizStyle.css' type='text/css' />
 </head>
-<nav class=''>
+<nav class='container'>
 	<ul>
 	    <li>
 	        <a class='nounderline' href='index.php'>Quiz</a>        
@@ -24,7 +24,7 @@
 			<a class='nounderline' href='stuScore.php'>Student's Scores</a>
 		</li>
 		<li>
-			<a class='nounderline' href='#' >Welcome: " . $_SESSION['username'] . "</a>
+			<a class='nounderline' href='#' >Welcome: <?php echo $_SESSION['username'];?></a>
 		</li>
 		<li class='rightSide'>
 			<a class='nounderline' href='start.php'>Switch User</a>
