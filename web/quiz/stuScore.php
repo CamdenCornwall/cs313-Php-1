@@ -12,7 +12,7 @@
 	<title>Quizzer</title>
 	<link rel='stylesheet' href='css/quizStyle.css' type='text/css' />
 </head>
-<nav class='container'>
+<nav class=''>
 	<ul>
 	    <li>
 	        <a class='nounderline' href='index.php'>Quiz</a>        

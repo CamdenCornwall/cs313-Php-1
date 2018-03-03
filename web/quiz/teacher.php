@@ -36,7 +36,7 @@ session_start();
 			<h2>Test Quiz</h2>
 			<p>Enter your Teacher ID</p>
 			<form name="myForm" action="loginTeacher.php" method="POST">
-				Teacher Name: <input type="text" name="tName">
+				Teacher Name: <input type="password" name="tName">
 				<input type="submit" value="Submit">
 			</form>
 		</div>
