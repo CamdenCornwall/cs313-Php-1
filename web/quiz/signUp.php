@@ -15,15 +15,11 @@
 ?>
 <?php include 'quizHeader1.php' ?>
 <body>
-<div class="container"style="
-    padding-left: 80px;
-">
+<div class="container">
 	<h1>Enter your student info:</h1>
 </div>
-<main style="
-    padding-left: 50px;
-    margin-left: 100px;"
->
+<main>
+
 	<div class="containerSmall">
 		<p>create your username with your first name and your last name. </br>Together with no spaces. (eg: Juan Ramirez, juanramirez)</p>
 		<form id="mainForm" action="createAccount.php" method="POST">

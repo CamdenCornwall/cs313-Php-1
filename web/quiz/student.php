@@ -7,7 +7,7 @@ if (!isset($_SESSION['userType']))
 		$_SESSION['userType'] = "student";
     }
 
-header("Location: signUp.php");
+header("Location: signIn.php");
 die();
     
 ?>
