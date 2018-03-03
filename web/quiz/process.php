@@ -22,14 +22,6 @@
 		$_SESSION['qNum'] ++;
 		$number = $_SESSION['qNum'];
 		header("Location: ". $_SERVER['REQUEST_URI']); 
-	}
-		/*
-		*	Get total questions
-		*/
-		$stmt = $db->prepare("SELECT COUNT(*) FROM questions");
-		$stmt->execute();
-		$questions = $stmt->fetch(PDO::FETCH_ASSOC);
-		$total = $questions['count'];
 		
 		/*
 		* Get points/Question
@@ -39,38 +31,33 @@
 		$statement1->execute();
 		$results = $statement1->fetch(PDO::FETCH_ASSOC);
 		$pointsPer = $results['points_per'];
+	
+		/*
+		*	Get total questions
+		*/
+		$stmt = $db->prepare("SELECT COUNT(*) FROM questions");
+		$stmt->execute();
+		$questions = $stmt->fetch(PDO::FETCH_ASSOC);
+		$total = $questions['count'];
+		
 		
 		/*
 		*	Get correct choice
 		*/
-		$statement2 = $db->prepare("SELECT * FROM choices WHERE question_number = ':number' AND is_correct = TRUE");
+		$statement2 = $db->prepare("SELECT * FROM choices WHERE question_number = :number AND is_correct = true");
 		$statement2->bindParam(':number', $number, PDO::PARAM_INT);
-		// $statement2->bindParam(':selected_choice', $selected_choice, PDO::PARAM_INT);
 		$statement2->execute();
-
 		//Get result
 		$result2 = $statement2->fetch(PDO::FETCH_ASSOC);
-	
-		//Set correct choice to either true or false
+		//Set correct choice
 		$correct_choice = $result2['id'];
-		// echo "$selected_choice </br>";
-		// echo "</br>";
-		// echo var_dump($correct_choice);
-		// echo "</br>";
-		// var_dump($correct_choice);
-
-	
-		//if the choice value is true...
-		if($correct_choice == $selected_choice){
+		
+		//Compare
+		if($selected_choice == $correct_choice){
 			//Answer is correct
-			$_SESSION["score"] = $userScore + $pointsPer;
+			$_SESSION['score'] += $pointsPer;
 		}
-		else{
-			//$_SESSION['score'] += 1;
-		}
-
-
-		// Check if last question
+		//Check if last question
 		if($number > $total){
 			header("Location: final.php");
 			exit();
@@ -78,5 +65,5 @@
 			header("Location: question.php");
 			die();
 		}
-	
+	}
     ?>
