@@ -76,7 +76,7 @@ if (isset($_POST['txtUser']) && isset($_POST['txtPassword']))
 if ($badLogin)
 {
 	echo "<div class='error container'>
-	<i class='fas fa-exclamation-triangle'></i>Incorrect username or password.</div>
+	<i class='fas fa-exclamation-triangle'></i> Incorrect username or password.</div>
 	<br /><br />\n";
 }
 ?>
