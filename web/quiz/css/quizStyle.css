@@ -249,7 +249,7 @@ input[type=submit].finish {
 	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
 }
 
-span.error{
+.error{
     /* color: rgb(192, 12, 12); */
     width: 400px;
     border: 1px solid #D8D8D8;
