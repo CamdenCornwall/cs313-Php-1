@@ -26,7 +26,7 @@
 
 		<p >
 			<label for="txtUser">Username</label>
-			<input type="text" id="txtUser" name="txtUser" size="5" placeholder="juanRamirez">
+			<input type="text" id="txtUser" name="txtUser" maxlength="25" size="2" placeholder="juanRamirez">
 		</p>
 		<p>
 			<label for="txtPassword">Password</label>
@@ -36,7 +36,7 @@
 			<input type="submit" value="Create Account" />
 		</p>
 		</form>
-		or <a href="signIn.php">Sign in</a> with an existing account.
+		<span>or <a href="signIn.php">Sign in</a> with an existing account.</span>
 	</div>
 </main>
 <footer>

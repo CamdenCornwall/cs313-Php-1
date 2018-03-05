@@ -41,7 +41,7 @@
 			<p class="question">
 				<?php echo $question['question_text']; ?>
 			</p>
-			<form id="choices" method="POST" action="process.php">
+			<form id="answers" method="POST" action="process.php">
 				<ul class="choices">
 					<?php 
 						//* get choices
@@ -51,7 +51,7 @@
 						$stmt3->execute();
 
 						while($row = $stmt3->fetch(PDO::FETCH_ASSOC)){
-							echo "<li><input name='choice' type='radio' form='choices' value='". $row['id'] ."' />" . $row['answer_text'] ."</li>";
+							echo "<li><input name='choice' type='radio' form='answers' value='". $row['id'] ."' />" . $row['answer_text'] ."</li>";
 						} 
 					?>
 				</ul>
