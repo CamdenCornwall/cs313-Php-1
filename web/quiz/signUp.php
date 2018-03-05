@@ -20,7 +20,7 @@
 </div>
 <main>
 
-	<div class="containerSmall">
+	<div class="container">
 		<p>create your username with your first name and your last name. </br>Together with no spaces. (eg: Juan Ramirez, juanramirez)</p>
 		<form id="mainForm" action="createAccount.php" method="POST">
 
